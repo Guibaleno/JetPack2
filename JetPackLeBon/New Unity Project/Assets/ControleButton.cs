@@ -20,6 +20,10 @@ public class ControleButton : MonoBehaviour {
     {
         SceneManager.LoadScene("Missions");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     // Use this for initialization
     //void Start () {
 
