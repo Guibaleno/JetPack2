@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour {
@@ -19,7 +20,7 @@ public class CharacterAnimation : MonoBehaviour {
     {
         
         playerPosition += 0.001f;
-        Player.transform.Translate(new Vector3(playerPosition,0, 0));
+        Player.transform.Translate(new Vector3(0.1f,0, 0));
         if (Input.GetAxis("Jump") > 0)
         {
             Jump();
@@ -29,5 +30,13 @@ public class CharacterAnimation : MonoBehaviour {
     {
         Player.AddForce(new Vector2(0, 20));
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("mort");
+        if (collision.gameObject.tag.Equals("Trap"))
+        {
+            SceneManager.LoadScene("MainMenu");
+            
+        }
+    }
 }
