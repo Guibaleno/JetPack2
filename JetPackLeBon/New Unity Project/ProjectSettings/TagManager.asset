@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - ScoreManager
+  - Trap
   layers:
   - Default
   - TransparentFX
