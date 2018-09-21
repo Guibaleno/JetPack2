@@ -12,6 +12,7 @@ public class FloorGenerator : MonoBehaviour {
     void Start () {
         float height = 2.0f * Camera.main.orthographicSize;
         screenWidthInPoints = height * Camera.main.aspect;
+
         StartCoroutine(GeneratorCheck());
 
     }
