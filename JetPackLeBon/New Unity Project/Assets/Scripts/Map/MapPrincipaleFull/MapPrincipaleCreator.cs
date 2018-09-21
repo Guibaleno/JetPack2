@@ -20,6 +20,8 @@ public class MapPrincipaleCreator : MonoBehaviour {
     void Start () {
 
         FindTronconToLoad();
+
+        DeleteTroncon();
 	}
 	
 	// Update is called once per frame
@@ -55,14 +57,26 @@ public class MapPrincipaleCreator : MonoBehaviour {
 
     }
 
-    void DeleteTronconAt(int x, int y)
+    void DeleteTroncon()
     {
         List<MapPrincipaleTroncon> deleteTroncon = new List<MapPrincipaleTroncon>(mapTroncon.Values);
+        Queue<MapPrincipaleTroncon> deleteQueue = new Queue<MapPrincipaleTroncon>();
 
         for (int LesX = 0; LesX < deleteTroncon.Count; LesX++)
         {
             float distance = Vector3.Distance(transform.position, deleteTroncon[LesX].transform.position);
-            //rendu a 22:12 dans la video : https://www.youtube.com/watch?v=AitcC7J2WpY
+           
+            if(distance > renderDist * MapPrincipaleTroncon.sizeX)
+            {
+                deleteQueue.Enqueue(deleteTroncon[LesX]);
+            }
+        }
+
+        while(deleteQueue.Count > 0)
+        {
+            MapPrincipaleTroncon troncon = deleteQueue.Dequeue();
+            mapTroncon.Remove(troncon.transform.position);
+            Destroy(troncon.gameObject);
         }
 
     }
