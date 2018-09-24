@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1999951496993000}
+  m_RootGameObject: {fileID: 1411882122039662}
   m_IsPrefabAsset: 1
---- !u!1 &1999951496993000
+--- !u!1 &1411882122039662
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4592442859804796}
-  - component: {fileID: 114901493348626124}
+  - component: {fileID: 4169918969255870}
+  - component: {fileID: 114582577988834774}
   m_Layer: 0
   m_Name: MissionManager
   m_TagString: MissionManager
@@ -27,38 +27,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4592442859804796
+--- !u!4 &4169918969255870
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999951496993000}
+  m_GameObject: {fileID: 1411882122039662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1289978, y: 0.84710693, z: -0.028610727}
+  m_LocalPosition: {x: 1.1290283, y: 0.84710693, z: -0.028610727}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114901493348626124
+--- !u!114 &114582577988834774
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1999951496993000}
+  m_GameObject: {fileID: 1411882122039662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8962f811d8fdc04c89424e47a907532, type: 3}
+  m_Script: {fileID: 11500000, guid: f3eabc24771212e40ab3efabfa9a76f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Mission1:
-  - test1
-  - test2
-  - 
-  - 
-  - 
-  Mission2: {fileID: 0}
-  Mission3: {fileID: 0}
-  canvas: {fileID: 0}
-  missonPrefab: {fileID: 1270497903616204, guid: 31caf59084233ce48a66de785bd396b4,
+  - {fileID: 114028090064264810, guid: 9bb3375f9e72ff34db8a7cf10825b0d2, type: 2}
+  canvas: {fileID: 223203246580929762, guid: 9bb3375f9e72ff34db8a7cf10825b0d2, type: 2}
+  missonPrefab: {fileID: 1918853320770998, guid: 31caf59084233ce48a66de785bd396b4,
     type: 2}

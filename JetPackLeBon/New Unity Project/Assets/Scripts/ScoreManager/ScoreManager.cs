@@ -7,10 +7,11 @@ public class ScoreManager : MonoBehaviour {
      Text LabelScore;
     int Score;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         LabelScore = GetComponent<Text>();
         Score = 0;
         DisplayScore();
+        DontDestroyOnLoad(gameObject);
     }
     public void AjouterPoints(int nbPoints)
     {

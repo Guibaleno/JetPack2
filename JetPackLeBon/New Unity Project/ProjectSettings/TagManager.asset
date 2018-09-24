@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - ScoreManager
   - Trap
+  - MissionManager
+  - MissionCoins
   layers:
   - Default
   - TransparentFX

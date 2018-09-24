@@ -5,35 +5,51 @@ using System;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour {
-    [SerializeField] String[] Mission1;
-    [SerializeField] Text Mission2;
-    [SerializeField] Text Mission3;
+    [SerializeField] MissionSeule[] Mission1;
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject missonPrefab;
-    int nombrePiecesPartie;
-    int distancePartie;
-    int distanceTotale;
+    int nombrePiece;
     System.Random randomNumber;
 	// Use this for initialization
-	void Start () {
-       // Mission1 = GetComponent<Text>();
-        Mission2 = GetComponent<Text>();
-        Mission3 = GetComponent<Text>();
-        randomNumber = new System.Random();
-        nombrePiecesPartie = randomNumber.Next(50,101);
-        //  Mission1.text = "Ramasser " + nombrePiecesPartie.ToString() + " pièces en une partie.";
-        int positionMission = 0;
-      foreach(String mission in Mission1)
+	void Start ()
+    {
+        GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionCoins");
+        if(currentMissions.Length > 1)
         {
-            GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
-            missionObject.GetComponent<Text>().text = mission;
-            missionObject.transform.Translate(Vector3.down * positionMission);
-            positionMission += 30;
+            for (int cptMissions = 0;cptMissions < currentMissions.Length;cptMissions ++)
+            {
+                if (cptMissions < currentMissions.Length - 1)
+                {
+                    GameObject mission = currentMissions[cptMissions];
+                    MissionSeule currentMission = mission.GetComponent<MissionSeule>();
+                    GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
+                    missionObject.GetComponent<Text>().text = "Ramasser " + currentMission.NombrePiece().ToString() + " pièces en une partie.";
+                    nombrePiece = currentMission.NombrePiece();
+                }
+            }
         }
+        else
+        {
+            foreach(MissionSeule mission in Mission1)
+            {
+                GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
+                missionObject.GetComponent<Text>().text = "Ramasser " + mission.NombrePiece().ToString() + " pièces en une partie.";
+                nombrePiece = mission.NombrePiece();
+                DontDestroyOnLoad(gameObject);
+            }
+            
+        }
+        
+      
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
+
+    public int NombrePiece()
+    {
+        return nombrePiece;
+    }
 }
