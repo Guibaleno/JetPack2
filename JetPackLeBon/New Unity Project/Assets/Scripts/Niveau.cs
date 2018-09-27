@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class Niveau : MonoBehaviour {
     GameObject lesMissions;
-    [SerializeField] ScoreManager scoreActuel;
+    ScoreManager scoreActuel;
     int scoreActuelint;
 	// Use this for initialization
 	void Start () {
         scoreActuelint = 0;
         
         lesMissions = GameObject.FindGameObjectWithTag("MissionManager");
-        scoreActuel = GetComponent<ScoreManager>();
+        scoreActuel = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+
     }
 	
 	// Update is called once per frame
