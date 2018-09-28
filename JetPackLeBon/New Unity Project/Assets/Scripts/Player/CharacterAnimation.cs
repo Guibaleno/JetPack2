@@ -32,7 +32,6 @@ public class CharacterAnimation : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("mort");
         if (collision.gameObject.tag.Equals("Trap"))
         {
             SceneManager.LoadScene("MainMenu");

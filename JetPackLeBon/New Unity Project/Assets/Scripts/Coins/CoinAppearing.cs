@@ -19,7 +19,6 @@ public class CoinAppearing : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            print("touché");
             Destroy(gameObject);
             scoreManager.AjouterPoints(1);
         }

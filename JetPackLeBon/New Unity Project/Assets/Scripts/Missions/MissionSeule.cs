@@ -18,7 +18,7 @@ public class MissionSeule : MonoBehaviour
         else
         {
             randomNumber = new System.Random();
-            nombrePieceMissionCourante = randomNumber.Next(0, 2);
+            nombrePieceMissionCourante = randomNumber.Next(1, 3);
             DontDestroyOnLoad(gameObject);
         }
        

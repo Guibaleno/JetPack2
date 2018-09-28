@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour {
     [SerializeField] MissionSeule[] Mission1;
-    [SerializeField] Canvas canvas;
+    Canvas canvas;
     [SerializeField] GameObject missonPrefab;
     int nombrePiece;
     System.Random randomNumber;
 	// Use this for initialization
 	void Start ()
     {
+        canvas = FindObjectOfType<Canvas>();
         GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionCoins");
         if(currentMissions.Length > 1)
         {
