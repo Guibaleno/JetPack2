@@ -9,6 +9,7 @@ TagManager:
   - Trap
   - MissionManager
   - MissionCoins
+  - AudioSource
   layers:
   - Default
   - TransparentFX

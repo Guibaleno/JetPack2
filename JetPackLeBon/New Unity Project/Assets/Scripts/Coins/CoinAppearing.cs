@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class CoinAppearing : MonoBehaviour {
    // [SerializeField] Rigidbody2D Player;
-    [SerializeField] Text DisplayScore;
     ScoreManager scoreManager;
+    [SerializeField] AudioClip coinSound;
+    AudioSource coinAudioSource;
     // Use this for initialization
     private int Score;
-    void Start () {
+    void Start ()
+    {
         Score = 0;
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+        coinAudioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        coinSound = coinAudioSource.GetComponent<AudioClip>();
     }
 	
 
@@ -21,6 +25,8 @@ public class CoinAppearing : MonoBehaviour {
         {
             Destroy(gameObject);
             scoreManager.AjouterPoints(1);
+            print(coinSound.ToString());
+            coinAudioSource.PlayOneShot(coinSound);
         }
     }
 
