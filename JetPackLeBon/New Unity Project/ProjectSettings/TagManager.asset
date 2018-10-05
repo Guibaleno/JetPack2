@@ -19,18 +19,18 @@ TagManager:
   - UI
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - player
   - Ground
   - background
   - mapFond
   - traps
   - ScoreManager
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - coin
+  - tree
   - 
   - 
   - 
@@ -47,6 +47,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: tree
+    uniqueID: 1307210867
+    locked: 0
   - name: camera
     uniqueID: 3406308595
+    locked: 0
+  - name: ground
+    uniqueID: 244844057
+    locked: 0
+  - name: background
+    uniqueID: 3083387809
+    locked: 0
+  - name: mapFond
+    uniqueID: 3990845961
+    locked: 0
+  - name: traps
+    uniqueID: 2796547459
+    locked: 0
+  - name: coin
+    uniqueID: 63052841
+    locked: 0
+  - name: player
+    uniqueID: 2710090897
     locked: 0
