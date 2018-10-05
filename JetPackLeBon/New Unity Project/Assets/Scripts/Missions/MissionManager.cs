@@ -5,43 +5,30 @@ using System;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour {
-    [SerializeField] MissionSeule[] Mission1;
     Canvas canvas;
     [SerializeField] GameObject missonPrefab;
-    int nombrePiece;
-    System.Random randomNumber;
-	// Use this for initialization
-	void Start ()
+    string[] LesMissionsTexte;
+    // Use this for initialization
+    void Awake ()
     {
+        GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionManager");
         canvas = FindObjectOfType<Canvas>();
-        GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionCoins");
-        if(currentMissions.Length > 1)
+        
+        if (currentMissions.Length <= 1)
         {
-            for (int cptMissions = 0;cptMissions < currentMissions.Length;cptMissions ++)
-            {
-                if (cptMissions < currentMissions.Length - 1)
-                {
-                    GameObject mission = currentMissions[cptMissions];
-                    MissionSeule currentMission = mission.GetComponent<MissionSeule>();
-                    GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
-                    missionObject.GetComponent<Text>().text = "Ramasser " + currentMission.NombrePiece().ToString() + " pièces en une partie.";
-                    nombrePiece = currentMission.NombrePiece();
-                }
-            }
+            Donnees.LesMissions = new string[2];
+            LesMissionsTexte = FabriquerTypesMissions();
+            ChoisirValeursMissions(LesMissionsTexte);
+            AfficherMissions();
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            foreach(MissionSeule mission in Mission1)
-            {
-                GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
-                missionObject.GetComponent<Text>().text = "Ramasser " + mission.NombrePiece().ToString() + " pièces en une partie.";
-                nombrePiece = mission.NombrePiece();
-                DontDestroyOnLoad(gameObject);
-            }
-            
+            print("HELLO");
+            Destroy(gameObject);
+            AfficherMissions();
         }
-        
-      
+
     }
 	
 	// Update is called once per frame
@@ -49,8 +36,57 @@ public class MissionManager : MonoBehaviour {
         
     }
 
+    string[] FabriquerTypesMissions()
+    {
+        string[] Missions = new string[2];
+        Missions[0] = "Ramasser @@ pièces en une partie.";
+        Missions[1] = "Parcourir @@m en une partie.";
+        return Missions;
+    }
+
+    void ChoisirValeursMissions(string[] Missions)
+    {
+        for (int cptMissions = 0; cptMissions < Missions.Length; cptMissions ++)
+        {
+            int nombreAleatoire = ChoisirNombreAleatoire(cptMissions);
+            Missions[cptMissions] = Missions[cptMissions].Replace("@@", nombreAleatoire.ToString());
+            Donnees.LesMissions[cptMissions] = Missions[cptMissions];
+        }
+    }
+
+    int ChoisirNombreAleatoire(int cptMission)
+    {
+        System.Random randomNumber = new System.Random();
+        int nombreGenere = 0;
+        if (cptMission == 0)
+        {
+            nombreGenere = randomNumber.Next(5, 10);
+            Donnees.PointsUnePartie = nombreGenere;
+            
+        }
+        else
+        if (cptMission == 1)
+        {
+            nombreGenere = randomNumber.Next(20, 30);
+            Donnees.DistanceUnePartie = nombreGenere;
+            
+        }
+        return nombreGenere;
+    }
+
+    void AfficherMissions()
+    {
+        for (int missionActuelle = 0; missionActuelle < Donnees.LesMissions.Length; missionActuelle++)
+        {
+            GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
+            missionObject.GetComponent<Text>().text = Donnees.LesMissions[missionActuelle];
+            missionObject.transform.position = missionObject.transform.position + Vector3.up * missionActuelle * -20;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     public int NombrePiece()
     {
-        return nombrePiece;
+        return Donnees.PointsUnePartie;
     }
 }

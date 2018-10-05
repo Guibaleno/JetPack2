@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
-public class MissionSeule : MonoBehaviour
+[CreateAssetMenu(menuName = "Mission")]
+public class MissionSeule : ScriptableObject
 {
     int nombrePieceMissionCourante;
     System.Random randomNumber;
 	// Use this for initialization
 	void Awake () {
-        GameObject[] test = GameObject.FindGameObjectsWithTag("MissionCoins");
+        GameObject[] test = GameObject.FindGameObjectsWithTag("uneMissionSeule");
         //print(test.name);
-        if (test.Length > 1)
+        /*if (test.Length > 1)
         {
             Destroy(gameObject);
         }
@@ -20,11 +20,11 @@ public class MissionSeule : MonoBehaviour
             randomNumber = new System.Random();
             nombrePieceMissionCourante = randomNumber.Next(1, 3);
             DontDestroyOnLoad(gameObject);
-        }
-       
-	}
+        }*/
 
-    private void Start()
+    }
+
+    /*private void Start()
     {
         
     }
@@ -32,7 +32,7 @@ public class MissionSeule : MonoBehaviour
     // Update is called once per frame
     void Update () {
 		
-	}
+	}*/
 
     public int NombrePiece()
     {

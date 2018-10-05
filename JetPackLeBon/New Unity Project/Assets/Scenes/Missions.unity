@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &444750412
+--- !u!1001 &424833467
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,17 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114582577988834774, guid: 20793f89369fe4c48935fc8a8ce0298a,
-        type: 2}
-      propertyPath: Mission1.Array.data[0]
-      value: 
-      objectReference: {fileID: 1132175441}
-    - target: {fileID: 114582577988834774, guid: 20793f89369fe4c48935fc8a8ce0298a,
-        type: 2}
-      propertyPath: missonPrefab
-      value: 
-      objectReference: {fileID: 1918853320770998, guid: 31caf59084233ce48a66de785bd396b4,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20793f89369fe4c48935fc8a8ce0298a, type: 2}
   m_IsPrefabAsset: 0
@@ -378,63 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738616f4dae51b54e874be43d971f469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1132175439
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1484443263753154, guid: 9bb3375f9e72ff34db8a7cf10825b0d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1132175440}
-  - component: {fileID: 1132175443}
-  - component: {fileID: 1132175441}
-  m_Layer: 5
-  m_Name: Mission1
-  m_TagString: MissionCoins
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1132175440
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 224728990740024938, guid: 9bb3375f9e72ff34db8a7cf10825b0d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132175439}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 267.9, y: 290}
-  m_SizeDelta: {x: 338.7, y: 31.4}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1132175441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114028090064264810, guid: 9bb3375f9e72ff34db8a7cf10825b0d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132175439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83478be8c479b4f4ab93de8f4054cf75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!222 &1132175443
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222602187017449564, guid: 9bb3375f9e72ff34db8a7cf10825b0d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132175439}
-  m_CullTransparentMesh: 0
 --- !u!1 &1712476272
 GameObject:
   m_ObjectHideFlags: 0
