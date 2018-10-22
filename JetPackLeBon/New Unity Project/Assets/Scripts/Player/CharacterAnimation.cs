@@ -58,8 +58,10 @@ public class CharacterAnimation : MonoBehaviour
        
         if (collision.gameObject.tag.Equals("Trap"))
         {
+            ScoreManager scoreManager = new ScoreManager();
+            scoreManager.FinPartie(Player.transform.position.x);
             SceneManager.LoadScene("MainMenu");
-
+            
         }
 
         if (collision.gameObject.tag.Equals("floor"))
