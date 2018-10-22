@@ -15,6 +15,7 @@ public class meter : MonoBehaviour
     private float distance = 0f;
     private bool missionDistancePartieAccomplie = false;
     private bool missionDistanceTotaleAccomplie = false;
+    private bool distanceBattue = false;
     private float distancePrecedente;
     private void Update()
     {
@@ -24,6 +25,7 @@ public class meter : MonoBehaviour
         
         float DistanceParcourueDepuisDernierFrame = distance - distancePrecedente;
         Donnees.DistanceTotaleActuelle += DistanceParcourueDepuisDernierFrame;
+        Donnees.DistancePartieActuelle = distance;
         DeterminerMissionDistance();
     }
 
@@ -36,6 +38,10 @@ public class meter : MonoBehaviour
         if (missionDistanceTotaleAccomplie == false)
         {   
             missionDistanceTotaleAccomplie = Donnees.DeterminerMissionDistanceTotaleAccomplie();
+        }
+        if (distanceBattue == false)
+        {
+            distanceBattue = Donnees.DeterminerBattreRecordDistance();
         }
     }
 }

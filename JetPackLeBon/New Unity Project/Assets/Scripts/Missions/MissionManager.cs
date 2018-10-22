@@ -65,14 +65,14 @@ public class MissionManager : MonoBehaviour {
         if (cptMission == 0)
         {
             nombreGenere = randomNumber.Next(5, 10);
-            Donnees.PointsUnePartie = nombreGenere;
+            Donnees.MissionPointsUnePartie = nombreGenere;
             
         }
         else
         if (cptMission == 1)
         {
             nombreGenere = randomNumber.Next(20, 30);
-            Donnees.DistanceUnePartie = nombreGenere;
+            Donnees.MissionDistanceUnePartie = nombreGenere;
             
         }
         if (cptMission == 2)
@@ -103,6 +103,6 @@ public class MissionManager : MonoBehaviour {
 
     public int NombrePiece()
     {
-        return Donnees.PointsUnePartie;
+        return Donnees.MissionPointsUnePartie;
     }
 }

@@ -8,10 +8,12 @@ public class ScoreManager : MonoBehaviour {
     int Score;
     bool pointUnePartie;
     bool pointsTotaux;
+    bool scoreBattu;
     // Use this for initialization
     void Awake () {
         pointUnePartie = false;
         pointsTotaux = false;
+        scoreBattu = false;
         LabelScore = GetComponent<Text>();
         Score = 0;
         DisplayScore();
@@ -27,7 +29,7 @@ public class ScoreManager : MonoBehaviour {
     private void EnregistrerDonneesPoints(int scoreAAjouter)
     {
         Donnees.PointsTotauxActuel += scoreAAjouter;
-        //Donnees.PointsUnePartie = Score;
+        Donnees.PointsPartieActuelle = Score;
         if (pointUnePartie == false)
         {
             pointUnePartie = Donnees.DeterminerMissionPointsPartieAccomplie(Score);
@@ -36,11 +38,10 @@ public class ScoreManager : MonoBehaviour {
         {
             pointsTotaux = Donnees.DeterminerMissionPointsTotauxAccomplie();
         }
-    }
-
-    public void FinPartie(float positionActuelle)
-    {
-        Donnees.FinPartie(Score, positionActuelle);
+        if (scoreBattu == false)
+        {
+            Donnees.DeterminerBattreRecordPieces();
+        }
     }
     
     public void DisplayScore()

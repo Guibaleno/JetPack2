@@ -5,26 +5,28 @@ using System;
 
 public class Donnees {
 
-    public static int PointsUnePartie { get; set; }
+    public static int MissionPointsUnePartie { get; set; }
+    public static int PointsPartieActuelle { get; set; }
     public static int PointsTotaux { get; set; }
     public static int PointsTotauxActuel { get; set; }
     public static int PointsMaximumNiveau { get; set; }
 
     public static string[] LesMissions { get; set; }
 
-    public static float DistanceUnePartie { get; set; }
+    public static float MissionDistanceUnePartie { get; set; }
+    public static float DistancePartieActuelle { get; set; }
     public static float DistanceTotale { get; set; }
     public static float DistanceTotaleActuelle { get; set; }
     public static float DistanceMaximaleNiveau { get; set; }
 
     public static bool DeterminerMissionPointsPartieAccomplie(int PointsPartieActuelle)
     {
-        if (PointsPartieActuelle >= PointsUnePartie)
+        if (PointsPartieActuelle >= MissionPointsUnePartie)
         {
             MonoBehaviour.print("Mission Points une Partie complétée!");
             JouerSonMission();
         }
-        return PointsPartieActuelle >= PointsUnePartie;
+        return PointsPartieActuelle >= MissionPointsUnePartie;
     }
     public static bool DeterminerMissionPointsTotauxAccomplie()
     {
@@ -36,14 +38,23 @@ public class Donnees {
         return PointsTotauxActuel >= PointsTotaux;
     }
 
+    public static bool DeterminerBattreRecordPieces()
+    {
+        if (PointsPartieActuelle >= PointsMaximumNiveau)
+        {
+            MonoBehaviour.print("Score battu!");
+        }
+        return PointsPartieActuelle >= PointsMaximumNiveau;
+    }
+
     public static bool DeterminerMissionDistancePartieAccomplie(float DistanceActuelle)
     {
-        if (DistanceActuelle >= DistanceUnePartie)
+        if (DistanceActuelle >= MissionDistanceUnePartie)
         {
             MonoBehaviour.print("Mission Distance une Partie complétée!");
             JouerSonMission();
         }
-        return DistanceActuelle >= DistanceUnePartie;
+        return DistanceActuelle >= MissionDistanceUnePartie;
     }
     
     public static bool DeterminerMissionDistanceTotaleAccomplie()
@@ -56,19 +67,35 @@ public class Donnees {
         return DistanceTotaleActuelle >= DistanceTotale;
     }
 
-    public static void FinPartie(int pieceAmassees, float distanceParcourue)
+    public static bool DeterminerBattreRecordDistance()
     {
-        if (pieceAmassees > PointsMaximumNiveau)
+        if (DistancePartieActuelle >= DistanceMaximaleNiveau)
         {
-            PointsMaximumNiveau = pieceAmassees;
+            MonoBehaviour.print("Distance battue!");
         }
-        if (distanceParcourue > DistanceMaximaleNiveau)
+        return DistancePartieActuelle >= DistanceMaximaleNiveau;
+    }
+
+    public static void FinPartie()
+    {
+        if (PointsPartieActuelle > PointsMaximumNiveau)
         {
-            DistanceMaximaleNiveau = distanceParcourue;
+            PointsMaximumNiveau = PointsPartieActuelle;
+            MonoBehaviour.print(PointsMaximumNiveau);
+        }
+        if (DistancePartieActuelle > DistanceMaximaleNiveau)
+        {
+            DistanceMaximaleNiveau = DistancePartieActuelle;
+            MonoBehaviour.print(DistanceMaximaleNiveau);
         }
     }
 
     private static void JouerSonMission()
+    {
+        JouerSon();
+    }
+
+    private static void JouerSon()
     {
 
     }
