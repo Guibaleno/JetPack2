@@ -8,17 +8,39 @@ public class CharacterAnimation : MonoBehaviour
     [SerializeField] Rigidbody2D Player;
     BoxCollider2D playerCollider;
     public float playerPosition;
+    public Transform groundCheckTransform;
+    private bool isGrounded;
+    public LayerMask groundCheckLayerMask;
+    private Animator playerAnimator;
+    public ParticleSystem magicBoots;
+    public float magicBootsForce = 75.0f;
+
+
+
+
     AudioSource RunAudioSource;
     void Start()
     {
         Player = GetComponent<Rigidbody2D>();
         playerPosition = Player.position.x;
         playerCollider = GetComponent<BoxCollider2D>();
+        playerAnimator = GetComponent<Animator>();
+        RunAudioSource = GameObject.FindGameObjectWithTag("AudioRun").GetComponent<AudioSource>();
+
     }
     void Update()
     {
+        bool magicBootsActive = Input.GetButton("Jump");
+        if (magicBootsActive)
+        {
+            Player.AddForce(new Vector2(0, magicBootsForce));
+        }
         MovePlayer();
         ManageGroundSound();
+        UpdateGroundedStatus();
+        AdjustMagicBoots(magicBootsActive);
+
+
 
     }
 
@@ -58,8 +80,8 @@ public class CharacterAnimation : MonoBehaviour
        
         if (collision.gameObject.tag.Equals("Trap"))
         {
-            ScoreManager scoreManager = new ScoreManager();
-            scoreManager.FinPartie(Player.transform.position.x);
+            
+            Donnees.FinPartie();
             SceneManager.LoadScene("MainMenu");
             
         }
@@ -67,13 +89,37 @@ public class CharacterAnimation : MonoBehaviour
         if (collision.gameObject.tag.Equals("floor"))
         {
 
-            RunAudioSource = GameObject.FindGameObjectWithTag("AudioRun").GetComponent<AudioSource>();
+           
             RunAudioSource.loop = true;
             RunAudioSource.Play();
 
           
         }
     }
+
+    void UpdateGroundedStatus()
+    {
+        
+        isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, 0.1f, groundCheckLayerMask);
+
+        playerAnimator.SetBool("isGrounded", isGrounded);
+    }
+
+    void AdjustMagicBoots(bool magicBootsActive)
+    {
+        var magicBootsEmission = magicBoots.emission;
+        magicBootsEmission.enabled = !isGrounded;
+        if (magicBootsActive)
+        {
+            magicBootsEmission.rateOverTime = 300.0f;
+        }
+        else
+        {
+            magicBootsEmission.rateOverTime = 75.0f;
+        }
+    }
+
+
 
 
 
