@@ -10,6 +10,8 @@ TagManager:
   - MissionManager
   - MissionCoins
   - AudioSource
+  - floor
+  - AudioRun
   layers:
   - Default
   - TransparentFX

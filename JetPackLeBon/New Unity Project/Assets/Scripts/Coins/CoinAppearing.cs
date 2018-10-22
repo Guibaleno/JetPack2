@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoinAppearing : MonoBehaviour {
-   // [SerializeField] Rigidbody2D Player;
+public class CoinAppearing : MonoBehaviour
+{
+    // [SerializeField] Rigidbody2D Player;
     ScoreManager scoreManager;
-    [SerializeField] AudioClip coinSound;
+    public AudioClip coinSound;
     AudioSource coinAudioSource;
     // Use this for initialization
     private int Score;
-    void Start ()
+    void Start()
     {
         Score = 0;
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         coinAudioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
-        coinSound = coinAudioSource.GetComponent<AudioClip>();
+        //   coinSound = coinAudioSource.GetComponent<AudioClip>();
     }
-	
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,6 +28,9 @@ public class CoinAppearing : MonoBehaviour {
             scoreManager.AjouterPoints(1);
             print(coinSound.ToString());
             coinAudioSource.PlayOneShot(coinSound);
+            // AudioSource.PlayClipAtPoint(coinSound, transform.position);
+            // Destroy(this.gameObject);
+
         }
     }
 
