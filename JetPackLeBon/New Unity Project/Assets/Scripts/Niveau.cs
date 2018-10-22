@@ -20,10 +20,10 @@ public class Niveau : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (scoreActuel.GetScore() >= missionsNiveau.NombrePiece() && MissionDejaReussie == false)
-        {
-            MissionDejaReussie = true;
-            print("Mission réussie");
-        }
+        //if (scoreActuel.GetScore() >= missionsNiveau.NombrePiece() && MissionDejaReussie == false)
+        //{
+        //    MissionDejaReussie = true;
+        //    print("Mission réussie");
+        //}
 	}
 }

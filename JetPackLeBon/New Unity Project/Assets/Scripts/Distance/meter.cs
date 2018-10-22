@@ -12,21 +12,36 @@ public class meter : MonoBehaviour
     //[SerializeField]
     //private Text disatnceRestante;
     //private float metre=2000;
-    private float distance;
-
-  
+    private float distance = 0f;
+    private bool missionDistancePartieAccomplie = false;
+    private bool missionDistanceTotaleAccomplie = false;
+    private bool distanceBattue = false;
+    private float distancePrecedente;
     private void Update()
     {
+        distancePrecedente = distance;
         distance = transform.position.x;
         distanceText.text = "Distance: " + distance.ToString("F1") + " meters";
-       // metre = metre - distance;
-      //  disatnceRestante.text = "Distance: " + distance.ToString("F1") + " meters";
+        
+        float DistanceParcourueDepuisDernierFrame = distance - distancePrecedente;
+        Donnees.DistanceTotaleActuelle += DistanceParcourueDepuisDernierFrame;
+        Donnees.DistancePartieActuelle = distance;
+        DeterminerMissionDistance();
+    }
 
-        //if (distance>=500)
-        //{
-
-        //}
- 
-
+    void DeterminerMissionDistance()
+    {
+        if (missionDistancePartieAccomplie == false)
+        {   
+            missionDistancePartieAccomplie = Donnees.DeterminerMissionDistancePartieAccomplie(distance);
+        }   
+        if (missionDistanceTotaleAccomplie == false)
+        {   
+            missionDistanceTotaleAccomplie = Donnees.DeterminerMissionDistanceTotaleAccomplie();
+        }
+        if (distanceBattue == false)
+        {
+            distanceBattue = Donnees.DeterminerBattreRecordDistance();
+        }
     }
 }

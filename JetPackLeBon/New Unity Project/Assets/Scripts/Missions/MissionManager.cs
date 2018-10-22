@@ -8,15 +8,17 @@ public class MissionManager : MonoBehaviour {
     Canvas canvas;
     [SerializeField] GameObject missonPrefab;
     string[] LesMissionsTexte;
+    int nombreMission;
     // Use this for initialization
     void Awake ()
     {
+        nombreMission = 4;
         GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionManager");
         canvas = FindObjectOfType<Canvas>();
         
         if (currentMissions.Length <= 1)
         {
-            Donnees.LesMissions = new string[2];
+            Donnees.LesMissions = new string[nombreMission];
             LesMissionsTexte = FabriquerTypesMissions();
             ChoisirValeursMissions(LesMissionsTexte);
             AfficherMissions();
@@ -38,9 +40,11 @@ public class MissionManager : MonoBehaviour {
 
     string[] FabriquerTypesMissions()
     {
-        string[] Missions = new string[2];
+        string[] Missions = new string[nombreMission];
         Missions[0] = "Ramasser @@ pièces en une partie.";
         Missions[1] = "Parcourir @@m en une partie.";
+        Missions[2] = "Ramasser un total de @@ pièces.";
+        Missions[3] = "Parcourir un total de @@m.";
         return Missions;
     }
 
@@ -61,15 +65,27 @@ public class MissionManager : MonoBehaviour {
         if (cptMission == 0)
         {
             nombreGenere = randomNumber.Next(5, 10);
-            Donnees.PointsUnePartie = nombreGenere;
+            Donnees.MissionPointsUnePartie = nombreGenere;
             
         }
         else
         if (cptMission == 1)
         {
             nombreGenere = randomNumber.Next(20, 30);
-            Donnees.DistanceUnePartie = nombreGenere;
+            Donnees.MissionDistanceUnePartie = nombreGenere;
             
+        }
+        if (cptMission == 2)
+        {
+            nombreGenere = randomNumber.Next(15, 20);
+            Donnees.PointsTotaux = nombreGenere;
+
+        }
+        if (cptMission == 3)
+        {
+            nombreGenere = randomNumber.Next(40, 50);
+            Donnees.DistanceTotale = nombreGenere;
+
         }
         return nombreGenere;
     }
@@ -87,6 +103,6 @@ public class MissionManager : MonoBehaviour {
 
     public int NombrePiece()
     {
-        return Donnees.PointsUnePartie;
+        return Donnees.MissionPointsUnePartie;
     }
 }
