@@ -81,7 +81,7 @@ public class CharacterAnimation : MonoBehaviour
         if (collision.gameObject.tag.Equals("Trap"))
         {
             
-            Donnees.FinPartie();
+            Donnees.DeterminerRecords();
             SceneManager.LoadScene("MainMenu");
             
         }

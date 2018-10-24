@@ -78,7 +78,7 @@ public class MissionManager : MonoBehaviour {
         if (cptMission == 2)
         {
             nombreGenere = randomNumber.Next(15, 20);
-            Donnees.PointsTotaux = nombreGenere;
+            Donnees.MissionPointsTotaux = nombreGenere;
 
         }
         if (cptMission == 3)

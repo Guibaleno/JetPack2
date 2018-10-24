@@ -7,7 +7,7 @@ public class Donnees {
 
     public static int MissionPointsUnePartie { get; set; }
     public static int PointsPartieActuelle { get; set; }
-    public static int PointsTotaux { get; set; }
+    public static int MissionPointsTotaux { get; set; }
     public static int PointsTotauxActuel { get; set; }
     public static int PointsMaximumNiveau { get; set; }
 
@@ -18,6 +18,8 @@ public class Donnees {
     public static float DistanceTotale { get; set; }
     public static float DistanceTotaleActuelle { get; set; }
     public static float DistanceMaximaleNiveau { get; set; }
+
+    public static int NombreMissionsReussieParPartie { get; set; }
 
     public static bool DeterminerMissionPointsPartieAccomplie(int PointsPartieActuelle)
     {
@@ -30,12 +32,12 @@ public class Donnees {
     }
     public static bool DeterminerMissionPointsTotauxAccomplie()
     {
-        if (PointsTotauxActuel >= PointsTotaux)
+        if (PointsTotauxActuel >= MissionPointsTotaux)
         {
             MonoBehaviour.print("Mission Points Totaux complétée!");
             JouerSonMission();
         }
-        return PointsTotauxActuel >= PointsTotaux;
+        return PointsTotauxActuel >= MissionPointsTotaux;
     }
 
     public static bool DeterminerBattreRecordPieces()
@@ -76,7 +78,7 @@ public class Donnees {
         return DistancePartieActuelle >= DistanceMaximaleNiveau;
     }
 
-    public static void FinPartie()
+    public static void DeterminerRecords()
     {
         if (PointsPartieActuelle > PointsMaximumNiveau)
         {
@@ -88,6 +90,21 @@ public class Donnees {
             DistanceMaximaleNiveau = DistancePartieActuelle;
             MonoBehaviour.print(DistanceMaximaleNiveau);
         }
+    }
+
+    public static string AfficherDistanceParcourueDurantLaPartie()
+    {
+        return "Distance parcourue " + DistancePartieActuelle.ToString() + "m.";
+    }
+
+    public static string AfficherPointsObtenusDurantLaPartie()
+    {
+        return "Vous avez obtenu " + PointsPartieActuelle.ToString() + " pièces durant la partie.";
+    }
+
+    public static string AfficherNombreMissionsReussiesDurantLaPartie()
+    {
+        return "Vous avez réussi " + NombreMissionsReussieParPartie.ToString() + " missions durant la partie.";
     }
 
     private static void JouerSonMission()
