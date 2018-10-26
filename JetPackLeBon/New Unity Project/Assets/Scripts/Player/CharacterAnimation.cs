@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEditor;
 
 public class CharacterAnimation : MonoBehaviour
 {
@@ -26,16 +27,19 @@ public class CharacterAnimation : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         playerAnimator = GetComponent<Animator>();
         RunAudioSource = GameObject.FindGameObjectWithTag("AudioRun").GetComponent<AudioSource>();
-
+        Donnees.PopUpStatistiques = false;
     }
     void Update()
     {
         bool magicBootsActive = Input.GetButton("Jump");
-        if (magicBootsActive)
+        //if (magicBootsActive)
+        //{
+        //    Player.AddForce(new Vector2(0, magicBootsForce));
+        //}
+        if (Donnees.PopUpStatistiques == false)
         {
-            Player.AddForce(new Vector2(0, magicBootsForce));
+            MovePlayer();
         }
-        MovePlayer();
         ManageGroundSound();
         UpdateGroundedStatus();
         AdjustMagicBoots(magicBootsActive);
@@ -82,7 +86,11 @@ public class CharacterAnimation : MonoBehaviour
         {
             
             Donnees.DeterminerRecords();
-            SceneManager.LoadScene("MainMenu");
+            Donnees.PopUpStatistiques = true;
+            //SceneManager.LoadScene("MainMenu");
+            PopupWindow.Show(new Rect(), new Popup());
+            
+            
             
         }
 

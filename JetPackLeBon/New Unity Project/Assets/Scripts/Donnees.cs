@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 
 public class Donnees {
+    public static bool PopUpStatistiques { get; set; }
 
     public static int MissionPointsUnePartie { get; set; }
     public static int PointsPartieActuelle { get; set; }
@@ -94,7 +95,7 @@ public class Donnees {
 
     public static string AfficherDistanceParcourueDurantLaPartie()
     {
-        return "Distance parcourue " + DistancePartieActuelle.ToString() + "m.";
+        return "Distance parcourue " + Math.Round(Convert.ToDecimal(DistancePartieActuelle), 1).ToString() + "m.";
     }
 
     public static string AfficherPointsObtenusDurantLaPartie()
