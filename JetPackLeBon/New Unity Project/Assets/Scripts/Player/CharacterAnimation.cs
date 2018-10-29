@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 
 public class CharacterAnimation : MonoBehaviour
@@ -15,13 +16,14 @@ public class CharacterAnimation : MonoBehaviour
     private Animator playerAnimator;
     public ParticleSystem magicBoots;
     public float magicBootsForce = 75.0f;
-
-
+    [SerializeField] Button Resume;
+    
 
 
     AudioSource RunAudioSource;
     void Start()
     {
+        Donnees.PartieTerminee = false;
         Player = GetComponent<Rigidbody2D>();
         playerPosition = Player.position.x;
         playerCollider = GetComponent<BoxCollider2D>();
@@ -84,14 +86,11 @@ public class CharacterAnimation : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Trap"))
         {
-
+            Donnees.PartieTerminee = true;
             Donnees.DeterminerRecords();
             Donnees.PopUpStatistiques = true;
             //SceneManager.LoadScene("MainMenu");
-            PopupWindow.Show(new Rect(), new Popup());
-
-
-
+            Resume.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.layer == 13)
