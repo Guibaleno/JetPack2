@@ -50,15 +50,12 @@ public class CharacterAnimation : MonoBehaviour
 
     void ManageGroundSound()
     {
-        
-        if (playerCollider.IsTouchingLayers(13))
+
+        if (!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-           
-
-        }else{
             RunAudioSource.Stop();
-
         }
+
 
     }
     private void MovePlayer()
@@ -81,33 +78,33 @@ public class CharacterAnimation : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+
         if (collision.gameObject.tag.Equals("Trap"))
         {
-            
+
             Donnees.DeterminerRecords();
             Donnees.PopUpStatistiques = true;
             //SceneManager.LoadScene("MainMenu");
             PopupWindow.Show(new Rect(), new Popup());
-            
-            
-            
+
+
+
         }
 
-        if (collision.gameObject.tag.Equals("floor"))
+        if (collision.gameObject.layer == 13)
         {
 
-           
+
             RunAudioSource.loop = true;
             RunAudioSource.Play();
 
-          
+
         }
     }
 
     void UpdateGroundedStatus()
     {
-        
+
         isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, 0.1f, groundCheckLayerMask);
 
         playerAnimator.SetBool("isGrounded", isGrounded);
@@ -126,9 +123,5 @@ public class CharacterAnimation : MonoBehaviour
             magicBootsEmission.rateOverTime = 75.0f;
         }
     }
-
-
-
-
 
 }
