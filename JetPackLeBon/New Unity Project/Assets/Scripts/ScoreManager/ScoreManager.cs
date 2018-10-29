@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour {
         Donnees.PointsPartieActuelle = Score;
         if (pointUnePartie == false)
         {
-            pointUnePartie = Donnees.DeterminerMissionPointsPartieAccomplie(Score);
+            pointUnePartie = Donnees.DeterminerMissionPointsPartieAccomplie();
         }
         if (pointsTotaux == false)
         {
@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour {
         }
         if (scoreBattu == false)
         {
-            Donnees.DeterminerBattreRecordPieces();
+            scoreBattu = Donnees.DeterminerBattreRecordPieces();
         }
     }
     

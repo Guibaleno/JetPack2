@@ -84,7 +84,7 @@ public class MissionManager : MonoBehaviour {
         if (cptMission == 3)
         {
             nombreGenere = randomNumber.Next(40, 50);
-            Donnees.DistanceTotale = nombreGenere;
+            Donnees.MissionDistanceTotale = nombreGenere;
 
         }
         return nombreGenere;
