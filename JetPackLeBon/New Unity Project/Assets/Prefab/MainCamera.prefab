@@ -148,7 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableRooms:
   - {fileID: 1428403559643980, guid: 05d72aa0d07864f469c3fe3118a33749, type: 2}
-  - {fileID: 1428403559643980, guid: 57105e5cced27ca4f8d6387fe0c954c5, type: 2}
+  - {fileID: 1428403559643980, guid: cad67daa283b2234cb7bacc35638d698, type: 2}
+  - {fileID: 1284839837560006, guid: 2f57a1b6d69db4846b61128c7c1e2b97, type: 2}
   currentRooms:
   - {fileID: 1428403559643980, guid: 05d72aa0d07864f469c3fe3118a33749, type: 2}
   availableObjects:

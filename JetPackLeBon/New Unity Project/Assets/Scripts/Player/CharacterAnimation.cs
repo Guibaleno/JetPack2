@@ -32,10 +32,13 @@ public class CharacterAnimation : MonoBehaviour
     void Update()
     {
         bool magicBootsActive = Input.GetButton("Jump");
-        //if (magicBootsActive)
-        //{
-        //    Player.AddForce(new Vector2(0, magicBootsForce));
-        //}
+        if (magicBootsActive)
+        {
+            //Player.AddForce(new Vector2(0, magicBootsForce));
+            
+        }
+
+
         if (Donnees.PopUpStatistiques == false)
         {
             MovePlayer();
@@ -116,11 +119,12 @@ public class CharacterAnimation : MonoBehaviour
         magicBootsEmission.enabled = !isGrounded;
         if (magicBootsActive)
         {
-            magicBootsEmission.rateOverTime = 300.0f;
+            magicBootsEmission.rateOverTime = 20.0f;
         }
         else
         {
-            magicBootsEmission.rateOverTime = 75.0f;
+            magicBootsEmission.rateOverTime = 0f;
+           
         }
     }
 

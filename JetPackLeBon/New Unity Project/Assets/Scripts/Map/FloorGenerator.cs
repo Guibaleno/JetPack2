@@ -103,7 +103,7 @@ public class FloorGenerator : MonoBehaviour {
         float playerX = transform.position.x;
         float removeObjectsX = playerX - screenWidthInPoints;
         float addObjectX = playerX + screenWidthInPoints;
-        float farthestObjectX = 0;
+        float farthestObjectX = 25;
         List<GameObject> objectsToRemove = new List<GameObject>();
         foreach (var obj in objects)
         {

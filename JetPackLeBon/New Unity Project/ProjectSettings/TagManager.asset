@@ -24,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - magicParticle
   - player
   - Ground
   - background
@@ -69,6 +69,9 @@ TagManager:
     locked: 0
   - name: coin
     uniqueID: 63052841
+    locked: 0
+  - name: magicParticle
+    uniqueID: 4221127327
     locked: 0
   - name: player
     uniqueID: 2710090897
