@@ -6,6 +6,9 @@ public class ControleButton : MonoBehaviour {
 
     public void StartButton()
     {
+        Donnees.DistancePartieActuelle = 0;
+        Donnees.PointsPartieActuelle = 0;
+        Donnees.NombreMissionsReussieParPartie = 0;
         SceneManager.LoadScene("Niveau");
     }
     public void ShopButton()

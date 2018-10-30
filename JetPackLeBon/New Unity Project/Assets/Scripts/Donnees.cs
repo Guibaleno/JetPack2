@@ -40,6 +40,7 @@ public class Donnees {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Points Totaux complétée!");
             JouerSonMission();
+            MissionPointsTotaux = 0;
         }
         return PointsTotauxActuel >= MissionPointsTotaux;
     }
@@ -72,6 +73,7 @@ public class Donnees {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Distance Totale complétée!");
             JouerSonMission();
+            MissionDistanceTotale = 0;
         }
         return DistanceTotaleActuelle >= MissionDistanceTotale;
     }

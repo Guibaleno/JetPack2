@@ -8,14 +8,12 @@ public class AfficherTexte : MonoBehaviour {
     [SerializeField] Text PtsObtenu;
     // Use this for initialization
     void Start () {
-        distance.text = Donnees.AfficherDistanceParcourueDurantLaPartie();
-        NbreMission.text = Donnees.AfficherNombreMissionsReussiesDurantLaPartie();
-        PtsObtenu.text = Donnees.AfficherPointsObtenusDurantLaPartie();
-
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        distance.text = Donnees.AfficherDistanceParcourueDurantLaPartie();
+        NbreMission.text = Donnees.AfficherNombreMissionsReussiesDurantLaPartie();
+        PtsObtenu.text = Donnees.AfficherPointsObtenusDurantLaPartie();
+    }
 }
