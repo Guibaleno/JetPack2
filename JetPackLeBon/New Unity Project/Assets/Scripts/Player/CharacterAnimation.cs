@@ -45,6 +45,10 @@ public class CharacterAnimation : MonoBehaviour
         {
             MovePlayer();
         }
+        else
+        {
+            RunAudioSource.Stop();
+        }
         ManageGroundSound();
         UpdateGroundedStatus();
         AdjustMagicBoots(magicBootsActive);
