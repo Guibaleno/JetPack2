@@ -44,10 +44,11 @@ public class CharacterAnimation : MonoBehaviour
         if (Donnees.PopUpStatistiques == false)
         {
             MovePlayer();
+            RunAudioSource.UnPause();
         }
         else
         {
-            RunAudioSource.Stop();
+            RunAudioSource.Pause();
         }
         ManageGroundSound();
         UpdateGroundedStatus();
@@ -64,6 +65,7 @@ public class CharacterAnimation : MonoBehaviour
         {
             RunAudioSource.Stop();
         }
+
 
 
     }
