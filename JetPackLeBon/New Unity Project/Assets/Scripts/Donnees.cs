@@ -106,6 +106,10 @@ public class Donnees {
     {
         return "Distance parcourue " + Math.Round(Convert.ToDecimal(DistancePartieActuelle), 1).ToString() + "m.";
     }
+    public static string AfficherArgentTotale()
+    {
+        return Math.Round(Convert.ToDecimal(PointsTotauxActuel)).ToString() ;
+    }
 
     public static string AfficherPointsObtenusDurantLaPartie()
     {
