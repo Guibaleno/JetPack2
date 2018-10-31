@@ -13,11 +13,17 @@ public class meter : MonoBehaviour
     //private Text disatnceRestante;
     //private float metre=2000;
     private float distance = 0f;
-    private bool missionDistancePartieAccomplie = false;
-    private bool missionDistanceTotaleAccomplie = false;
-    private bool distanceBattue = false;
+    private bool missionDistancePartieAccomplie;
+    private bool missionDistanceTotaleAccomplie;
+    private bool distanceBattue;
 
     private float distancePrecedente;
+    private void Awake()
+    {
+        missionDistancePartieAccomplie = false;
+        missionDistanceTotaleAccomplie = false;
+        distanceBattue = false;
+    }
     private void Update()
     {
         distancePrecedente = distance;

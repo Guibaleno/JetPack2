@@ -14,15 +14,16 @@ public class AfficherShop : MonoBehaviour {
 	
 
 	void Update () {
-        Money.text ="Vous avez " +  Donnees.PointsTotauxActuel +" pieces";
+        Money.text ="Vous avez " +  Donnees.PointsAchat +" pieces";
 	}
   public void acheterArticle()
     {
-        if (Donnees.PointsTotauxActuel >= valeurArticle)
+        if (Donnees.PointsAchat >= valeurArticle)
         {
-            Donnees.PointsTotauxActuel -=valeurArticle;
+            Donnees.PointsAchat -= valeurArticle;
+            Donnees.article = true;
             Prix.text = " acheté";
-            Money.text = "Vous avez " + Donnees.PointsTotauxActuel + " pieces";
+            Money.text = "Vous avez " + Donnees.PointsAchat + " pieces";
         }
     }
 }

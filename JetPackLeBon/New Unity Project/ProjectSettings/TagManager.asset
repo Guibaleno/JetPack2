@@ -12,6 +12,9 @@ TagManager:
   - AudioSource
   - floor
   - AudioRun
+  - AudioRecord
+  - AudioMission
+  - particle
   layers:
   - Default
   - TransparentFX

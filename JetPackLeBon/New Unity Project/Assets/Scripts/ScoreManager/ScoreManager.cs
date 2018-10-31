@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
      Text LabelScore;
-    int Score;
     bool pointUnePartie;
     bool pointsTotaux;
     bool scoreBattu;
@@ -15,21 +14,24 @@ public class ScoreManager : MonoBehaviour {
         pointsTotaux = false;
         scoreBattu = false;
         LabelScore = GetComponent<Text>();
-        Score = 0;
-        DisplayScore();
         DontDestroyOnLoad(gameObject);
+        Donnees.PointsObtenusMission = 0;
+    }
+    private void Update()
+    {
+        DisplayScore();
     }
     public void AjouterPoints(int nbPoints)
     {
-        Score+= nbPoints;
-        DisplayScore();
+        Donnees.PointsAchat += nbPoints;
+        Donnees.PointsPartieActuelle += nbPoints;
         EnregistrerDonneesPoints(nbPoints);
+        
     }
 
     private void EnregistrerDonneesPoints(int scoreAAjouter)
     {
         Donnees.PointsTotauxActuel += scoreAAjouter;
-        Donnees.PointsPartieActuelle = Score;
         if (pointUnePartie == false)
         {
             pointUnePartie = Donnees.DeterminerMissionPointsPartieAccomplie();
@@ -46,11 +48,7 @@ public class ScoreManager : MonoBehaviour {
     
     public void DisplayScore()
     {
-        LabelScore.text = "Score : " + Score.ToString();
+        LabelScore.text = "Score : " + Donnees.PointsPartieActuelle.ToString();
     }
 
-    public int GetScore()
-    {
-        return this.Score;
-    }
 }

@@ -5,12 +5,15 @@ using System;
 
 public class Donnees {
     public static bool PopUpStatistiques { get; set; }
-
+    public static bool article { get; set; }
     public static int MissionPointsUnePartie { get; set; }
     public static int PointsPartieActuelle { get; set; }
     public static int MissionPointsTotaux { get; set; }
     public static int PointsTotauxActuel { get; set; }
     public static int PointsMaximumNiveau { get; set; }
+
+    public static int PointsAchat { get; set; }
+    public static int PointsObtenusMission { get; set; }
 
     public static string[] LesMissions { get; set; }
 
@@ -29,7 +32,7 @@ public class Donnees {
         {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Points une Partie complétée!");
-            JouerSonMission();
+            ManageMissions(5);
         }
         return PointsPartieActuelle >= MissionPointsUnePartie;
     }
@@ -39,8 +42,8 @@ public class Donnees {
         {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Points Totaux complétée!");
-            JouerSonMission();
-            MissionPointsTotaux = 0;
+            ManageMissions(10);
+            PointsTotauxActuel = 0;
         }
         return PointsTotauxActuel >= MissionPointsTotaux;
     }
@@ -61,7 +64,7 @@ public class Donnees {
         {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Distance une Partie complétée!");
-            JouerSonMission();
+            ManageMissions(5);
         }
         return DistanceActuelle >= MissionDistanceUnePartie;
     }
@@ -72,8 +75,8 @@ public class Donnees {
         {
             NombreMissionsReussieParPartie += 1;
             MonoBehaviour.print("Mission Distance Totale complétée!");
-            JouerSonMission();
-            MissionDistanceTotale = 0;
+            ManageMissions(10);
+            DistanceTotaleActuelle = 0;
         }
         return DistanceTotaleActuelle >= MissionDistanceTotale;
     }
@@ -118,9 +121,15 @@ public class Donnees {
 
     public static string AfficherNombreMissionsReussiesDurantLaPartie()
     {
-        return "Vous avez réussi " + NombreMissionsReussieParPartie.ToString() + " missions durant la partie.";
+        return "Vous avez réussi " + NombreMissionsReussieParPartie.ToString() + " missions durant la partie pour un total de " + PointsObtenusMission.ToString() + " pièces supplémentaires.";
     }
 
+    private static void ManageMissions(int bonusMission)
+    {
+        PointsAchat += bonusMission;
+        PointsObtenusMission += bonusMission;
+        JouerSonMission();
+    }
     private static void JouerSonMission()
     {
         AudioSource sonMission = GameObject.FindGameObjectWithTag("AudioMission").GetComponent<AudioSource>();
