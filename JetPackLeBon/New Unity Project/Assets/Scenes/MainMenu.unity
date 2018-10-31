@@ -357,6 +357,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114404283677725484, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224634068400464900, guid: c5d5c10137ba2b8449937074c046af7a,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -526,6 +531,51 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224646099219160278, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0012321
+      objectReference: {fileID: 0}
+    - target: {fileID: 224646099219160278, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 292
+      objectReference: {fileID: 0}
+    - target: {fileID: 224646099219160278, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 591.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224646099219160278, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183272242801912, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.9427508
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183272242801912, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183272242801912, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404283677725484, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404283677725484, guid: c5d5c10137ba2b8449937074c046af7a,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5c10137ba2b8449937074c046af7a, type: 2}
