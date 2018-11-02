@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-
+using TMPro;
 public class CharacterAnimation : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
@@ -17,10 +17,10 @@ public class CharacterAnimation : MonoBehaviour
     public ParticleSystem magicBoots;
     public float magicBootsForce = 75.0f;
     [SerializeField] Button Resume;
-    
-
-
+    public AudioSource Mourir;
     AudioSource RunAudioSource;
+    public AudioClip Meurt;
+    [SerializeField]TextMeshProUGUI gameOver;
     void Start()
     {
         Donnees.PartieTerminee = false;
@@ -97,6 +97,9 @@ public class CharacterAnimation : MonoBehaviour
             Donnees.PopUpStatistiques = true;
             //SceneManager.LoadScene("MainMenu");
             Resume.gameObject.SetActive(false);
+            gameOver.gameObject.SetActive(true);
+            Mourir.clip = Meurt;
+            Mourir.Play();
         }
 
         if (collision.gameObject.layer == 13)
