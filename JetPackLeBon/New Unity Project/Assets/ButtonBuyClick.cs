@@ -10,13 +10,13 @@ public class ButtonBuyClick : MonoBehaviour {
     {
         if (gameObject.GetComponentInChildren<Text>().text != "Acheté")
         {
-            //if (Donnees.PointsAchat >= 10)
-           /// {
+            if (Donnees.PointsAchat >= 10)
+            {
 
                 Donnees.PointsAchat -= 10;
                 Donnees.ChangerJetPack(name.ToString());
                 gameObject.GetComponentInChildren<Text>().text = "Acheté";
-            //}
+            }
         }
     }
 }
