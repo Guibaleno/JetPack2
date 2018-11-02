@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MenuPause : MonoBehaviour
 {
+    
     public GameObject pauseMenu;
     void Start()
     {

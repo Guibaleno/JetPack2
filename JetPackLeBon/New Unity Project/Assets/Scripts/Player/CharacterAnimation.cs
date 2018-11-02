@@ -21,6 +21,9 @@ public class CharacterAnimation : MonoBehaviour
     AudioSource RunAudioSource;
     public AudioClip Meurt;
     [SerializeField]TextMeshProUGUI gameOver;
+    //private bool isDead = false;
+
+    //public int UnHit = 0;
     void Start()
     {
         Donnees.PartieTerminee = false;
@@ -39,6 +42,8 @@ public class CharacterAnimation : MonoBehaviour
             //Player.AddForce(new Vector2(0, magicBootsForce));
             
         }
+
+      
 
 
         if (Donnees.PopUpStatistiques == false)
@@ -71,9 +76,13 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void MovePlayer()
     {
-
-        playerPosition += 0.001f;
-        Player.transform.Translate(new Vector3(0.1f, 0, 0));
+        //if (!isDead)
+        //{
+            playerPosition += 0.001f;
+            Player.transform.Translate(new Vector3(0.1f, 0, 0));
+        //}
+        
+        
         if (Input.GetAxis("Jump") > 0)
         {
             Jump();
@@ -92,6 +101,13 @@ public class CharacterAnimation : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("Trap"))
         {
+            //float timer = 3.0f;
+            //if (timer < 0)
+            //{
+              
+
+            //}
+
             Donnees.PartieTerminee = true;
             Donnees.DeterminerRecords();
             Donnees.PopUpStatistiques = true;
@@ -100,6 +116,12 @@ public class CharacterAnimation : MonoBehaviour
             gameOver.gameObject.SetActive(true);
             Mourir.clip = Meurt;
             Mourir.Play();
+            //timer -= Time.deltaTime;
+
+            //playerAnimator.SetBool("isDead", true);
+            //HitByTrap(collision);
+
+
         }
 
         if (collision.gameObject.layer == 13)
@@ -111,7 +133,12 @@ public class CharacterAnimation : MonoBehaviour
 
 
         }
+        
     }
+    //void HitByTrap(Collision2D trapCollider)
+    //{
+    //    isDead = true;
+    //}
 
     void UpdateGroundedStatus()
     {
