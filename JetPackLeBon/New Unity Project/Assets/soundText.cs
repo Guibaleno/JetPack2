@@ -14,8 +14,8 @@ using System.Collections;
 
     void Start()
     {
-        sonMenu.clip = myClip[Random.Range(0, myClip.Length)];
-        sonMenu.Play();
+    //    sonMenu.clip = myClip[Random.Range(0, myClip.Length)];
+      //  sonMenu.Play();
 
     }
     public void OnPointerEnter(PointerEventData ped)
