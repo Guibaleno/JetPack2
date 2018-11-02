@@ -38,8 +38,7 @@ public class Donnees {
     public static bool PartieCommencee { get; set; }
     public static void CommencerPartie()
     {
-        if (PartieCommencee == false)
-        {           
+                   
             tableauJetPacks.Add(jetPackBonhomme);
             tableauJetPacks.Add(jetPackEtoile);
             for (int cptJetPack = 0; cptJetPack < tableauJetPacks.Count; cptJetPack++)
@@ -47,9 +46,9 @@ public class Donnees {
                 tableauJetPacks[cptJetPack] = false;
             }
 
-            jetPackBonhomme = true;
+            tableauJetPacks[0] = true;
             PartieCommencee = true;
-        }
+        MonoBehaviour.print("nouvelle partie");
     }
 
     public static int TrouverJetPackActuel()
@@ -64,7 +63,10 @@ public class Donnees {
             }
             cptJetPack++;
         }
-        return cptJetPack;
+        MonoBehaviour.print(tableauJetPacks.Count);
+        MonoBehaviour.print(tableauJetPacks[0]);
+        MonoBehaviour.print(tableauJetPacks[1]);
+        return cptJetPack ;
     }
 
     public static void ChangerJetPack(string jetPackName)
@@ -72,14 +74,23 @@ public class Donnees {
         int jetPackAActiver = 0;
         if (jetPackName == "jetPackEtoile")
         {
-            jetPackAActiver = 0;
+            jetPackAActiver = 1;
             jetPackEtoileAchetee = true;
+            tableauJetPacks[1] = true;
+            tableauJetPacks[0] = false;
+            
+            MonoBehaviour.print(tableauJetPacks[0]);
+            MonoBehaviour.print(tableauJetPacks[1]);
         }
         else
         {
-            jetPackAActiver = 1;
+            jetPackAActiver = 0;
             jetPackBonhommeAchetee = true;
+            tableauJetPacks[1] = false;
+            tableauJetPacks[0] = true;
+            
         }
+        MonoBehaviour.print(jetPackName);
         for (int cptJetPack = 0; cptJetPack < tableauJetPacks.Count; cptJetPack++)
         {
             

@@ -8,15 +8,16 @@ public class ModifierTexture : MonoBehaviour {
     public Texture2D[] texture;
     // Use this for initialization
     void Start () {
-		
-	}
+        Renderer rend = GameObject.FindGameObjectWithTag("particle").GetComponent<Renderer>();
+        rend.material = new Material(shader);
+        print(Donnees.TrouverJetPackActuel() - 1);
+        rend.material.mainTexture = texture[Donnees.TrouverJetPackActuel() - 1];
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-            Renderer rend = GameObject.FindGameObjectWithTag("particle").GetComponent<Renderer>();
-            rend.material = new Material(shader);
-            rend.material.mainTexture = texture[Donnees.TrouverJetPackActuel()];
+            
         
 
     }

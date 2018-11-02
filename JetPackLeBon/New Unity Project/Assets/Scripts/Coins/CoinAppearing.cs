@@ -26,7 +26,6 @@ public class CoinAppearing : MonoBehaviour
         {
             Destroy(gameObject);
             scoreManager.AjouterPoints(1);
-            //print(coinSound.ToString());
             coinAudioSource.PlayOneShot(coinSound);
             // AudioSource.PlayClipAtPoint(coinSound, transform.position);
             // Destroy(this.gameObject);

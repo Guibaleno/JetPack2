@@ -6,8 +6,10 @@ public class CommencerPartie : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Donnees.CommencerPartie();
-        print("asdsaddaFK hdagf");
+        if (Donnees.PartieCommencee == false)
+        {
+            Donnees.CommencerPartie();
+        }
     }
 	
 	// Update is called once per frame

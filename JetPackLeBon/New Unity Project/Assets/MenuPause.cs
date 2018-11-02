@@ -11,7 +11,7 @@ public class MenuPause : MonoBehaviour
     {
         Donnees.PopUpStatistiques = false;
 
-        print(GameObject.FindGameObjectWithTag("Respawn").GetComponent<Text>().text);
+        
     }
 
 
