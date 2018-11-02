@@ -42,7 +42,7 @@ public class meter : MonoBehaviour
         {   
             missionDistancePartieAccomplie = Donnees.DeterminerMissionDistancePartieAccomplie(distance);
         }   
-        if (missionDistanceTotaleAccomplie == false)
+        if (missionDistanceTotaleAccomplie == false && !Donnees.MissionDistanceTotaleCompletee)
         {   
             missionDistanceTotaleAccomplie = Donnees.DeterminerMissionDistanceTotaleAccomplie();
         }

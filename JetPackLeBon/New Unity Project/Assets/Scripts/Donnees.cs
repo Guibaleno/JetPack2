@@ -5,12 +5,12 @@ using System;
 
 public class Donnees {
     public static bool PopUpStatistiques { get; set; }
-    public static bool article { get; set; }
     public static int MissionPointsUnePartie { get; set; }
     public static int PointsPartieActuelle { get; set; }
     public static int MissionPointsTotaux { get; set; }
     public static int PointsTotauxActuel { get; set; }
     public static int PointsMaximumNiveau { get; set; }
+    public static bool MissionPointsTotauxCompletee { get; set; }
 
     public static int PointsAchat { get; set; }
     public static int PointsObtenusMission { get; set; }
@@ -22,9 +22,78 @@ public class Donnees {
     public static float MissionDistanceTotale { get; set; }
     public static float DistanceTotaleActuelle { get; set; }
     public static float DistanceMaximaleNiveau { get; set; }
+    public static bool MissionDistanceTotaleCompletee { get; set; }
 
     public static int NombreMissionsReussieParPartie { get; set; }
     public static bool PartieTerminee { get; set; }
+
+
+    public static List<bool> tableauJetPacks = new List<bool>();
+    public static bool jetPackBonhomme { get; set; }
+    public static bool jetPackEtoile { get; set; }
+
+    public static bool jetPackBonhommeAchetee { get; set; }
+    public static bool jetPackEtoileAchetee { get; set; }
+
+    public static bool PartieCommencee { get; set; }
+    public static void CommencerPartie()
+    {
+        if (PartieCommencee == false)
+        {           
+            tableauJetPacks.Add(jetPackBonhomme);
+            tableauJetPacks.Add(jetPackEtoile);
+            for (int cptJetPack = 0; cptJetPack < tableauJetPacks.Count; cptJetPack++)
+            {
+                tableauJetPacks[cptJetPack] = false;
+            }
+
+            jetPackBonhomme = true;
+            PartieCommencee = true;
+        }
+    }
+
+    public static int TrouverJetPackActuel()
+    {
+        int cptJetPack = 0;
+        bool trouve = false;
+        while (cptJetPack < tableauJetPacks.Count && trouve == false)
+        {
+            if (tableauJetPacks[cptJetPack] == true)
+            {
+                trouve = true;
+            }
+            cptJetPack++;
+        }
+        return cptJetPack;
+    }
+
+    public static void ChangerJetPack(string jetPackName)
+    {
+        int jetPackAActiver = 0;
+        if (jetPackName == "jetPackEtoile")
+        {
+            jetPackAActiver = 0;
+            jetPackEtoileAchetee = true;
+        }
+        else
+        {
+            jetPackAActiver = 1;
+            jetPackBonhommeAchetee = true;
+        }
+        for (int cptJetPack = 0; cptJetPack < tableauJetPacks.Count; cptJetPack++)
+        {
+            
+            if (cptJetPack != jetPackAActiver)
+            {
+                tableauJetPacks[cptJetPack] = false;
+            }
+            else
+            {
+                tableauJetPacks[cptJetPack] = true;
+            }
+            
+        }
+    }
 
     public static bool DeterminerMissionPointsPartieAccomplie()
     {
@@ -41,7 +110,7 @@ public class Donnees {
         if (PointsTotauxActuel >= MissionPointsTotaux)
         {
             NombreMissionsReussieParPartie += 1;
-            MonoBehaviour.print("Mission Points Totaux complétée!");
+            MissionPointsTotauxCompletee = true;
             ManageMissions(10);
             PointsTotauxActuel = 0;
         }
@@ -63,7 +132,7 @@ public class Donnees {
         if (DistanceActuelle >= MissionDistanceUnePartie)
         {
             NombreMissionsReussieParPartie += 1;
-            MonoBehaviour.print("Mission Distance une Partie complétée!");
+            
             ManageMissions(5);
         }
         return DistanceActuelle >= MissionDistanceUnePartie;
@@ -74,7 +143,7 @@ public class Donnees {
         if (DistanceTotaleActuelle >= MissionDistanceTotale)
         {
             NombreMissionsReussieParPartie += 1;
-            MonoBehaviour.print("Mission Distance Totale complétée!");
+            MissionDistanceTotaleCompletee = true;
             ManageMissions(10);
             DistanceTotaleActuelle = 0;
         }

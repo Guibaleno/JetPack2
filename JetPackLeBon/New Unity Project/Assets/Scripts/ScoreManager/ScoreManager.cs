@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour {
         {
             pointUnePartie = Donnees.DeterminerMissionPointsPartieAccomplie();
         }
-        if (pointsTotaux == false)
+        if (pointsTotaux == false && !Donnees.MissionPointsTotauxCompletee)
         {
             pointsTotaux = Donnees.DeterminerMissionPointsTotauxAccomplie();
         }
