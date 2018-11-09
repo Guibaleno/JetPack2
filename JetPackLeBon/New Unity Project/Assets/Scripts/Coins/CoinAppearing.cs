@@ -12,7 +12,7 @@ public class CoinAppearing : MonoBehaviour
     // Use this for initialization
 
     public GameObject player;
-    public float speed=10f;
+    //public float speed=10f;
     private int Score;
 
     void Start()
@@ -24,14 +24,15 @@ public class CoinAppearing : MonoBehaviour
         coinAudioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
         //   coinSound = coinAudioSource.GetComponent<AudioClip>();
     }
-     void Update()
-    {
-
-        float step = speed * Time.deltaTime;
-        transform.LookAt(player.transform);
-        
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-    }
+    // void Update()
+    //{
+    //
+    //    //float step = speed * Time.deltaTime;
+    //    //transform.LookAt(player.transform);
+    //    
+    //    //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+    //    transform.position = 
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
