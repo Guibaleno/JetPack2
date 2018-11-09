@@ -20,6 +20,7 @@ public class ButtonBuyClick : MonoBehaviour {
             DeterminerSiAchat();
             print("jetPackEtoile");
         }
+        else
         if (name == "jetPackBonhomme")
         {
             if (gameObject.GetComponentInChildren<Text>().text == "Acheté")
@@ -29,6 +30,16 @@ public class ButtonBuyClick : MonoBehaviour {
             }
             DeterminerSiAchat();
             print("jetPackBonhomme");
+        }
+        else
+        if (name == "invincible")
+        {
+            if (Donnees.PointsAchat >= 15)
+            {
+                Donnees.PointsAchat -= 15;
+                Donnees.invincible += 1;
+                gameObject.GetComponentInChildren<Text>().text = "Buy (" + Donnees.invincible.ToString() + ")";
+            }
         }
 
     }

@@ -113,6 +113,10 @@ public class FloorGenerator : MonoBehaviour {
             {
                 objectsToRemove.Add(obj);
             }
+            if (Donnees.invincibleBool && obj.tag == "Trap")
+            {
+                obj.GetComponent<BoxCollider2D>().enabled = false;
+            }
         }
         foreach (var obj in objectsToRemove)
         {

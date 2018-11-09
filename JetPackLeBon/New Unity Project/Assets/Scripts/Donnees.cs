@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Timers;
 
 public class Donnees {
     public static bool PopUpStatistiques { get; set; }
@@ -35,6 +36,9 @@ public class Donnees {
     public static bool jetPackBonhommeAchetee { get; set; }
     public static bool jetPackEtoileAchetee { get; set; }
 
+    public static int invincible { get; set; }
+    public static bool invincibleBool { get; set; }
+
     public static bool PartieCommencee { get; set; }
     public static void CommencerPartie()
     {
@@ -48,6 +52,7 @@ public class Donnees {
 
             tableauJetPacks[0] = true;
             PartieCommencee = true;
+            invincible = 0;
         MonoBehaviour.print("nouvelle partie");
     }
 

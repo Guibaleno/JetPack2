@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50668469388948962}
   - component: {fileID: 114244387963259476}
   - component: {fileID: 61578429458993634}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SpearTurning
   m_TagString: Trap
   m_Icon: {fileID: 0}

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61783032279831282}
   - component: {fileID: 50211571868311460}
   - component: {fileID: 114937454698255098}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: picTraps
   m_TagString: Trap
   m_Icon: {fileID: 0}
