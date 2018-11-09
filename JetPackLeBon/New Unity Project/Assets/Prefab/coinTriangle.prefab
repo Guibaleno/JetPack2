@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212284254481937538}
   - component: {fileID: 58812951760919716}
   - component: {fileID: 114943928461760870}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (1)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212499522574170052}
   - component: {fileID: 58120296267422124}
   - component: {fileID: 114784554016548434}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (2)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -56,9 +56,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4902517467510746}
   - component: {fileID: 212369710969156068}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: coinTriangle
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 212291795416607492}
   - component: {fileID: 58077505626641562}
   - component: {fileID: 114899518789069636}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}

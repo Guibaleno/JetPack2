@@ -25,7 +25,9 @@ public class CharacterAnimation : MonoBehaviour
     [SerializeField] Button vie;
     float tempsAnimation = 0;
     bool etatAnimation = false;
-    //private bool isDead = false;
+    private bool isDead = false;
+    private float playerSpeed = 1f;
+
 
 
     //public int UnHit = 0;
@@ -49,6 +51,11 @@ public class CharacterAnimation : MonoBehaviour
             //Player.AddForce(new Vector2(0, magicBootsForce));
             
         }
+        if (Donnees.DistancePartieActuelle > 0.1f)
+        {
+            playerSpeed *= 1.001f;
+        }
+
         if (Donnees.PopUpStatistiques == false)
         {
             MovePlayer();
@@ -60,7 +67,11 @@ public class CharacterAnimation : MonoBehaviour
         }
         ManageGroundSound();
         UpdateGroundedStatus();
-        AdjustMagicBoots(magicBootsActive);
+        if(!isDead)
+        {
+            AdjustMagicBoots(magicBootsActive);
+        }
+       
 
 
 
@@ -82,11 +93,18 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void MovePlayer()
     {
-        //if (!isDead)
-        //{
+        if (!isDead)
+        {
             playerPosition += 0.001f;
-            Player.transform.Translate(new Vector3(0.1f, 0, 0));
-        //}
+            Player.transform.Translate(new Vector3(0.1f + (playerSpeed * Time.smoothDeltaTime), 0, 0));
+
+            if (Input.GetAxis("Jump") > 0)
+            {
+                Jump();
+
+
+            }
+        }
         if (Donnees.invincibleBool)
         {
 
@@ -110,12 +128,7 @@ public class CharacterAnimation : MonoBehaviour
             Player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
         }
 
-        if (Input.GetAxis("Jump") > 0)
-        {
-            Jump();
 
-
-        }
 
         if (Input.GetKeyDown(KeyCode.I) && Donnees.invincibleBool == false)
         {
@@ -136,48 +149,60 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (Donnees.invincibleBool == false)
         {
-            if (collision.gameObject.tag.Equals("Trap"))
+            DeclencherMort(collision);
+            Invoke("AfficherStatistiqueDeMort", 2);
+
+
+            //SceneManager.LoadScene("MainMenu");
+            Resume.gameObject.SetActive(false);
+            gameOver.gameObject.SetActive(true);
+            
+
+
+
+            if (collision.gameObject.layer == 13)
             {
-                //float timer = 3.0f;
-                //if (timer < 0)
-                //{
 
-
-                //}
-
-                Donnees.PartieTerminee = true;
-                Donnees.DeterminerRecords();
-                Donnees.PopUpStatistiques = true;
-                //SceneManager.LoadScene("MainMenu");
-                Resume.gameObject.SetActive(false);
-                gameOver.gameObject.SetActive(true);
-                doubler.gameObject.SetActive(true);
-                vie.gameObject.SetActive(true);
-                Mourir.clip = Meurt;
-                Mourir.Play();
-                //timer -= Time.deltaTime;
-
-                //playerAnimator.SetBool("isDead", true);
-                //HitByTrap(collision);
-
+                if (!isDead)
+                {
+                    RunAudioSource.loop = true;
+                    RunAudioSource.Play();
+                }
 
             }
         }
-        if (collision.gameObject.layer == 13)
-        {
 
-
-            RunAudioSource.loop = true;
-            RunAudioSource.Play();
-
-
-        }
         
     }
-    //void HitByTrap(Collision2D trapCollider)
-    //{
-    //    isDead = true;
-    //}
+    private void DeclencherMort(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Trap") || collision.gameObject.tag.Equals("TrapCeiling"))
+        {
+            playerAnimator.SetBool("isDead", true);
+            HitByTrap(collision);
+            playerSpeed = 1f;
+
+        }
+    }
+
+    private void AfficherStatistiqueDeMort()
+    {
+        if (isDead)
+        {
+
+            Donnees.PartieTerminee = true;
+            Donnees.DeterminerRecords();
+            Donnees.PopUpStatistiques = true;
+        }
+
+
+    }
+    void HitByTrap(Collision2D trapCollider)
+    {
+        isDead = true;
+        Mourir.clip = Meurt;
+        Mourir.Play();
+    }
 
     void UpdateGroundedStatus()
     {
@@ -206,10 +231,16 @@ public class CharacterAnimation : MonoBehaviour
     {
         Donnees.invincibleBool = false;
         GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("Trap");
+        GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
         for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
         {
             print(piegesJeu[cptPiege].ToString());
             piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
+        }
+        for (int cptPiege = 0; cptPiege < piegesJeu2.Length; cptPiege++)
+        {
+            print(piegesJeu2[cptPiege].ToString());
+            piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4368568757259404}
   - component: {fileID: 212161814739167554}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: coinArrow
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212425789384419826}
   - component: {fileID: 58974252306816334}
   - component: {fileID: 114192080852223362}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (7)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212725143900539264}
   - component: {fileID: 58969355014733202}
   - component: {fileID: 114196897205288562}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (3)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 212585383594888814}
   - component: {fileID: 58155163579488072}
   - component: {fileID: 114551136848342580}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (6)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 212753264394268506}
   - component: {fileID: 58136684145727928}
   - component: {fileID: 114911765188636094}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (1)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 212749984692013202}
   - component: {fileID: 58213038860553494}
   - component: {fileID: 114679524442383400}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (2)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 212880916932928146}
   - component: {fileID: 58854158688196172}
   - component: {fileID: 114913972347487188}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (8)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 212095209915684856}
   - component: {fileID: 58221527662445766}
   - component: {fileID: 114767693959838216}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 212233875142160624}
   - component: {fileID: 58392195551035966}
   - component: {fileID: 114047078662667346}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (4)
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 212999430823274228}
   - component: {fileID: 58515578656310056}
   - component: {fileID: 114063168757890918}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: Coin (5)
   m_TagString: Coin
   m_Icon: {fileID: 0}
