@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class MenuPause : MonoBehaviour
 {
-    
+    public Button buttondouble;
+    public Button vie;
     public GameObject pauseMenu;
     void Start()
     {
@@ -35,7 +36,21 @@ public class MenuPause : MonoBehaviour
         }
 
     }
-    public void JeuEnPause()
+    public void doubler()
+    {
+        Donnees.PointsAchat += Donnees.PointsPartieActuelle;
+        Donnees.PointsAchat += Donnees.PointsObtenusMission;
+        Donnees.PointsPartieActuelle = Donnees.PointsPartieActuelle * 2;
+        Donnees.PointsObtenusMission = Donnees.PointsObtenusMission * 2;
+        
+        buttondouble.gameObject.SetActive(false);
+    }
+    public void Vie()
+    {
+        Donnees.PopUpStatistiques = false;
+        pauseMenu.SetActive(false);
+    }
+        public void JeuEnPause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;

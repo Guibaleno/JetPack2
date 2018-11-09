@@ -21,7 +21,10 @@ public class CharacterAnimation : MonoBehaviour
     AudioSource RunAudioSource;
     public AudioClip Meurt;
     [SerializeField]TextMeshProUGUI gameOver;
+    [SerializeField] Button doubler;
+    [SerializeField] Button vie;
     //private bool isDead = false;
+
 
     //public int UnHit = 0;
     void Start()
@@ -33,19 +36,17 @@ public class CharacterAnimation : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         RunAudioSource = GameObject.FindGameObjectWithTag("AudioRun").GetComponent<AudioSource>();
         Donnees.PopUpStatistiques = false;
-    }
+           
+}
     void Update()
     {
-        bool magicBootsActive = Input.GetButton("Jump");
+       
+    bool magicBootsActive = Input.GetButton("Jump");
         if (magicBootsActive)
         {
             //Player.AddForce(new Vector2(0, magicBootsForce));
             
         }
-
-      
-
-
         if (Donnees.PopUpStatistiques == false)
         {
             MovePlayer();
@@ -61,7 +62,10 @@ public class CharacterAnimation : MonoBehaviour
 
 
 
-    }
+}
+
+
+
 
     void ManageGroundSound()
     {
@@ -114,6 +118,8 @@ public class CharacterAnimation : MonoBehaviour
             //SceneManager.LoadScene("MainMenu");
             Resume.gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
+            doubler.gameObject.SetActive(true);
+            vie.gameObject.SetActive(true);
             Mourir.clip = Meurt;
             Mourir.Play();
             //timer -= Time.deltaTime;

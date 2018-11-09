@@ -475,6 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114063168757890918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,6 +489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114192080852223362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,6 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114196897205288562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,6 +517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114551136848342580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,6 +531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114679524442383400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -535,6 +545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114767693959838216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -547,6 +559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114911765188636094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,6 +573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!114 &114913972347487188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,6 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
+  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
+  speed: 10
 --- !u!212 &212095209915684856
 SpriteRenderer:
   m_ObjectHideFlags: 1
