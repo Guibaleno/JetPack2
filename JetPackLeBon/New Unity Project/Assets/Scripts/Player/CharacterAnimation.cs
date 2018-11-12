@@ -53,7 +53,15 @@ public class CharacterAnimation : MonoBehaviour
         }
         if (Donnees.DistancePartieActuelle > 0.1f)
         {
-            playerSpeed *= 1.001f;
+            if (playerSpeed < 100f)
+            {
+                playerSpeed *= 1.001f;
+            }
+            else
+            {
+                playerSpeed = 100f;
+            }
+           
         }
 
         if (Donnees.PopUpStatistiques == false)
