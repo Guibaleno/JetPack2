@@ -163,10 +163,8 @@ public class CharacterAnimation : MonoBehaviour
 
 
             //SceneManager.LoadScene("MainMenu");
-            Resume.gameObject.SetActive(false);
-            gameOver.gameObject.SetActive(true);
-            doubler.gameObject.SetActive(true);
-            vie.gameObject.SetActive(true);
+         
+
 
             if (collision.gameObject.layer == 13)
             {
@@ -201,6 +199,10 @@ public class CharacterAnimation : MonoBehaviour
             Donnees.PartieTerminee = true;
             Donnees.DeterminerRecords();
             Donnees.PopUpStatistiques = true;
+            gameOver.gameObject.SetActive(true);
+            doubler.gameObject.SetActive(true);
+            vie.gameObject.SetActive(true);
+            Resume.gameObject.SetActive(false);
         }
 
 
