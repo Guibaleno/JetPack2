@@ -156,9 +156,8 @@ public class CharacterAnimation : MonoBehaviour
             //SceneManager.LoadScene("MainMenu");
             Resume.gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
-            
-
-
+            doubler.gameObject.SetActive(true);
+            vie.gameObject.SetActive(true);
 
             if (collision.gameObject.layer == 13)
             {

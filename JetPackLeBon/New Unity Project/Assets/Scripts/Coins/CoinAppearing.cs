@@ -10,29 +10,29 @@ public class CoinAppearing : MonoBehaviour
     public AudioClip coinSound;
     AudioSource coinAudioSource;
     // Use this for initialization
+    private GameObject player;
+    private float speed = 10f;
+    private Vector3 PlayerPos;
 
-    public GameObject player;
-    //public float speed=10f;
+
     private int Score;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
 
-      //  player=GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
         Score = 0;
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         coinAudioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
         //   coinSound = coinAudioSource.GetComponent<AudioClip>();
     }
-    // void Update()
-    //{
-    //
-    //    //float step = speed * Time.deltaTime;
-    //    //transform.LookAt(player.transform);
-    //    
-    //    //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-    //    transform.position = 
-    //}
+    void Update()
+    {
+        PlayerPos = player.transform.position;
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
