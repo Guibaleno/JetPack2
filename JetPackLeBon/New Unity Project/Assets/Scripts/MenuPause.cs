@@ -38,6 +38,7 @@ public class MenuPause : MonoBehaviour
     }
     public void doubler()
     {
+        Donnees.DoublerPiece = true;
         Donnees.PointsAchat += Donnees.PointsPartieActuelle;
         Donnees.PointsAchat += Donnees.PointsObtenusMission;
         Donnees.PointsPartieActuelle = Donnees.PointsPartieActuelle * 2;
@@ -47,6 +48,7 @@ public class MenuPause : MonoBehaviour
     }
     public void Vie()
     {
+        Donnees.Chance = true;
         Donnees.PopUpStatistiques = false;
         pauseMenu.SetActive(false);
     }

@@ -56,7 +56,7 @@ public class CharacterAnimation : MonoBehaviour
             if (playerSpeed < 5f)
             {
                 playerSpeed *= 1.001f;
-                Donnees.cancer = playerSpeed;
+                Donnees.VitessePiece = playerSpeed;
             }
             else
             {
@@ -200,8 +200,16 @@ public class CharacterAnimation : MonoBehaviour
             Donnees.DeterminerRecords();
             Donnees.PopUpStatistiques = true;
             gameOver.gameObject.SetActive(true);
-            doubler.gameObject.SetActive(true);
-            vie.gameObject.SetActive(true);
+            if(Donnees.Chance==false)
+            {               
+                vie.gameObject.SetActive(true);
+            }
+            if (Donnees.DoublerPiece == false)
+            {
+                doubler.gameObject.SetActive(true);
+            }
+               
+            
             Resume.gameObject.SetActive(false);
         }
 
