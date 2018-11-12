@@ -28,6 +28,7 @@ public class CoinAppearing : MonoBehaviour
     }
     void Update()
     {
+        speed = Donnees.cancer + 10 ;
         PlayerPos = player.transform.position;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);

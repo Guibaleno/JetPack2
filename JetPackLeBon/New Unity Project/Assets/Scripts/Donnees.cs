@@ -13,6 +13,8 @@ public class Donnees {
     public static int PointsMaximumNiveau { get; set; }
     public static bool MissionPointsTotauxCompletee { get; set; }
 
+    public static float cancer { get; set; }
+
     public static int PointsAchat { get; set; }
     public static int PointsObtenusMission { get; set; }
 

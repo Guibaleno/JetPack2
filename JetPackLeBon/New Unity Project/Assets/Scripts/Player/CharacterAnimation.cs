@@ -56,6 +56,7 @@ public class CharacterAnimation : MonoBehaviour
             if (playerSpeed < 5f)
             {
                 playerSpeed *= 1.001f;
+                Donnees.cancer = playerSpeed;
             }
             else
             {
