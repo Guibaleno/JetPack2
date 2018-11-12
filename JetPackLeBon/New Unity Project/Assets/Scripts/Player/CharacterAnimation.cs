@@ -53,13 +53,13 @@ public class CharacterAnimation : MonoBehaviour
         }
         if (Donnees.DistancePartieActuelle > 0.1f)
         {
-            if (playerSpeed < 100f)
+            if (playerSpeed < 5f)
             {
                 playerSpeed *= 1.001f;
             }
             else
             {
-                playerSpeed = 100f;
+                playerSpeed = 5f;
             }
            
         }

@@ -32,7 +32,7 @@ public class FloorGenerator : MonoBehaviour {
         int randomRoomIndex = Random.Range(0, availableRooms.Length);
         GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]); 
         float roomWidth = room.transform.Find("floor").localScale.x; 
-        float roomCenter = farthestRoomEndX + roomWidth * 1.001f;  
+        float roomCenter = farthestRoomEndX + roomWidth * 0.5f;  
         room.transform.position = new Vector3(roomCenter, 0, 0);
         currentRooms.Add(room);
     }
