@@ -13,8 +13,8 @@ public class MenuPause : MonoBehaviour
     {
         Donnees.PopUpStatistiques = false;
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        Donnees.Chance = true;
-        Donnees.DoublerPiece = true;
+        Donnees.Chance = false;
+        Donnees.DoublerPiece = false;
     }
 
 
