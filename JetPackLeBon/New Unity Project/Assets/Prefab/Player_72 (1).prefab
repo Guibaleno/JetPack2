@@ -207,6 +207,8 @@ MonoBehaviour:
   Mourir: {fileID: 0}
   Meurt: {fileID: 8300000, guid: 70b61a2ba1fc330448ae49719008b13b, type: 3}
   gameOver: {fileID: 0}
+  doubler: {fileID: 0}
+  vie: {fileID: 0}
 --- !u!114 &114916361843474842
 MonoBehaviour:
   m_ObjectHideFlags: 1
