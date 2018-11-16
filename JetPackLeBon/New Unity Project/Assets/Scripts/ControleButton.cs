@@ -17,7 +17,7 @@ public class ControleButton : MonoBehaviour {
     }
     public void QuitButton()
     {
-       
+        Application.Quit();
     }
     public void MissionButton()
     {
