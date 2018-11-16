@@ -8,11 +8,13 @@ public class MenuPause : MonoBehaviour
     public Button buttondouble;
     public Button vie;
     public GameObject pauseMenu;
+    private Animator playerAnimator;
     void Start()
     {
         Donnees.PopUpStatistiques = false;
+        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        vie.gameObject.SetActive(true);
 
-        
     }
 
 
@@ -48,9 +50,11 @@ public class MenuPause : MonoBehaviour
     }
     public void Vie()
     {
+        playerAnimator.SetBool("isDead", false);
         Donnees.Chance = true;
         Donnees.PopUpStatistiques = false;
         pauseMenu.SetActive(false);
+        vie.gameObject.SetActive(false);
     }
         public void JeuEnPause()
     {

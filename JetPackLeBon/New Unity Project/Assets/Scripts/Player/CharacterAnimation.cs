@@ -25,7 +25,6 @@ public class CharacterAnimation : MonoBehaviour
     [SerializeField] Button vie;
     float tempsAnimation = 0;
     bool etatAnimation = false;
-    private bool isDead = false;
     private float playerSpeed = 1f;
 
 
@@ -44,7 +43,7 @@ public class CharacterAnimation : MonoBehaviour
 }
     void Update()
     {
-       
+        print(playerAnimator.GetBool("isDead"));
     bool magicBootsActive = Input.GetButton("Jump");
         if (magicBootsActive)
         {
@@ -67,6 +66,7 @@ public class CharacterAnimation : MonoBehaviour
 
         if (Donnees.PopUpStatistiques == false)
         {
+            
             MovePlayer();
             RunAudioSource.UnPause();
         }
@@ -76,7 +76,7 @@ public class CharacterAnimation : MonoBehaviour
         }
         ManageGroundSound();
         UpdateGroundedStatus();
-        if(!isDead)
+        if(!playerAnimator.GetBool("isDead"))
         {
             AdjustMagicBoots(magicBootsActive);
         }
@@ -102,8 +102,9 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void MovePlayer()
     {
-        if (!isDead)
+        if (!playerAnimator.GetBool("isDead"))
         {
+            print("popopo");
             playerPosition += 0.001f;
             Player.transform.Translate(new Vector3(0.1f + (playerSpeed * Time.smoothDeltaTime), 0, 0));
 
@@ -161,7 +162,7 @@ public class CharacterAnimation : MonoBehaviour
         if (Donnees.invincibleBool == false)
         {
             DeclencherMort(collision);
-            Invoke("AfficherStatistiqueDeMort", 2);
+            
 
 
             //SceneManager.LoadScene("MainMenu");
@@ -171,7 +172,7 @@ public class CharacterAnimation : MonoBehaviour
             if (collision.gameObject.layer == 13)
             {
 
-                if (!isDead)
+                if (!playerAnimator.GetBool("isDead"))
                 {
                     RunAudioSource.loop = true;
                     RunAudioSource.Play();
@@ -184,18 +185,19 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void DeclencherMort(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Trap") || collision.gameObject.tag.Equals("TrapCeiling"))
+        if ((collision.gameObject.tag.Equals("Trap") || collision.gameObject.tag.Equals("TrapCeiling")) && playerAnimator.GetBool("isDead") == false)
         {
             playerAnimator.SetBool("isDead", true);
             HitByTrap(collision);
             playerSpeed = 1f;
-
+            Invoke("AfficherStatistiqueDeMort", 2);
+            magicBoots.enableEmission = false;
         }
     }
 
     private void AfficherStatistiqueDeMort()
     {
-        if (isDead)
+        if (playerAnimator.GetBool("isDead"))
         {
 
             Donnees.PartieTerminee = true;
@@ -219,7 +221,6 @@ public class CharacterAnimation : MonoBehaviour
     }
     void HitByTrap(Collision2D trapCollider)
     {
-        isDead = true;
         Mourir.clip = Meurt;
         Mourir.Play();
     }
