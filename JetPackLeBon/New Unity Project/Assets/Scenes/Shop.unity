@@ -354,6 +354,32 @@ Prefab:
       propertyPath: buttonAimant
       value: 
       objectReference: {fileID: 1436230153}
+    - target: {fileID: 114259112898987344, guid: 174a06fac51f5934886c43d5d139be3d,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eabf022ae4e2fe1479cbfb60465213db,
+        type: 3}
+    - target: {fileID: 114771867417031786, guid: 174a06fac51f5934886c43d5d139be3d,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771867417031786, guid: 174a06fac51f5934886c43d5d139be3d,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.6001856
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771867417031786, guid: 174a06fac51f5934886c43d5d139be3d,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.014907437
+      objectReference: {fileID: 0}
+    - target: {fileID: 114845861178835256, guid: 174a06fac51f5934886c43d5d139be3d,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174a06fac51f5934886c43d5d139be3d, type: 2}
   m_IsPrefabAsset: 0
