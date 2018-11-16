@@ -43,8 +43,8 @@ public class CharacterAnimation : MonoBehaviour
 }
     void Update()
     {
-        print(playerAnimator.GetBool("isDead"));
-    bool magicBootsActive = Input.GetButton("Jump");
+        
+        bool magicBootsActive = Input.GetButton("Jump");
         if (magicBootsActive)
         {
             //Player.AddForce(new Vector2(0, magicBootsForce));
@@ -104,7 +104,7 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (!playerAnimator.GetBool("isDead"))
         {
-            print("popopo");
+            
             playerPosition += 0.001f;
             Player.transform.Translate(new Vector3(0.1f + (playerSpeed * Time.smoothDeltaTime), 0, 0));
 
@@ -146,7 +146,7 @@ public class CharacterAnimation : MonoBehaviour
             //{
             Donnees.invincible -= 1;
             Donnees.invincibleBool = true;
-            print("INVINCIBLE ACTIVEE");
+            
             DesactiverBoxColliderPieges();
             Invoke("MettreFinInvul", 5.0f);
             //}
@@ -190,7 +190,7 @@ public class CharacterAnimation : MonoBehaviour
             playerAnimator.SetBool("isDead", true);
             HitByTrap(collision);
             playerSpeed = 1f;
-            Invoke("AfficherStatistiqueDeMort", 2);
+            Invoke("AfficherStatistiqueDeMort", 3);
             magicBoots.enableEmission = false;
         }
     }
@@ -254,12 +254,12 @@ public class CharacterAnimation : MonoBehaviour
         GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
         for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
         {
-            print(piegesJeu[cptPiege].ToString());
+           
             piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
         }
         for (int cptPiege = 0; cptPiege < piegesJeu2.Length; cptPiege++)
         {
-            print(piegesJeu2[cptPiege].ToString());
+            
             piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
         }
     }
@@ -271,12 +271,12 @@ public class CharacterAnimation : MonoBehaviour
         GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
         for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
         {
-            print(piegesJeu[cptPiege].ToString());
+           
             piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
         }
         for (int cptPiege = 0; cptPiege < piegesJeu2.Length; cptPiege++)
         {
-            print(piegesJeu2[cptPiege].ToString());
+            
             piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
         }
     }
