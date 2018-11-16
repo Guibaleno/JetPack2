@@ -13,8 +13,8 @@ public class MenuPause : MonoBehaviour
     {
         Donnees.PopUpStatistiques = false;
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        vie.gameObject.SetActive(true);
-        buttondouble.gameObject.SetActive(true);
+        Donnees.Chance = true;
+        Donnees.DoublerPiece = true;
     }
 
 
@@ -50,12 +50,17 @@ public class MenuPause : MonoBehaviour
     }
     public void Vie()
     {
-        playerAnimator.SetBool("isDead", false);
-        Donnees.Chance = true;
-        Donnees.PopUpStatistiques = false;
-        pauseMenu.SetActive(false);
-        vie.gameObject.SetActive(false);
-        playerAnimator.SetTrigger("isDeadOnetimeTrigger");
+        if (Donnees.PointsAchat >= 100)
+        {
+            Donnees.PointsAchat -= 100;
+            playerAnimator.SetBool("isDead", false);
+            Donnees.Chance = true;
+            Donnees.PopUpStatistiques = false;
+            pauseMenu.SetActive(false);
+            vie.gameObject.SetActive(false);
+            playerAnimator.SetTrigger("isDeadOnetimeTrigger");
+            Donnees.PartieTerminee = false;
+        }
     }
         public void JeuEnPause()
     {
