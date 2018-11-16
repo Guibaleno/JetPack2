@@ -40,13 +40,16 @@ public class MenuPause : MonoBehaviour
     }
     public void doubler()
     {
-        Donnees.DoublerPiece = true;
-        Donnees.PointsAchat += Donnees.PointsPartieActuelle;
-        Donnees.PointsAchat += Donnees.PointsObtenusMission;
-        Donnees.PointsPartieActuelle = Donnees.PointsPartieActuelle * 2;
-        Donnees.PointsObtenusMission = Donnees.PointsObtenusMission * 2;
-        
-        buttondouble.gameObject.SetActive(false);
+        if (Donnees.PointsAchat >= 100)
+        {
+            Donnees.PointsAchat -= 100;
+            Donnees.DoublerPiece = true;
+            Donnees.PointsAchat += Donnees.PointsPartieActuelle;
+            Donnees.PointsAchat += Donnees.PointsObtenusMission;
+            Donnees.PointsPartieActuelle = Donnees.PointsPartieActuelle * 2;
+            Donnees.PointsObtenusMission = Donnees.PointsObtenusMission * 2;
+            buttondouble.gameObject.SetActive(false);
+        }
     }
     public void Vie()
     {
