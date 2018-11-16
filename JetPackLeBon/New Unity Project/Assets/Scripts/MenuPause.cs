@@ -55,6 +55,7 @@ public class MenuPause : MonoBehaviour
         Donnees.PopUpStatistiques = false;
         pauseMenu.SetActive(false);
         vie.gameObject.SetActive(false);
+        playerAnimator.SetTrigger("isDeadOnetimeTrigger");
     }
         public void JeuEnPause()
     {
