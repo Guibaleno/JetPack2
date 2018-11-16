@@ -145,7 +145,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -160,7 +160,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -175,7 +175,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -193,8 +193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
-  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
-  speed: 10
 --- !u!114 &114899518789069636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,8 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
-  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
-  speed: 10
 --- !u!114 &114943928461760870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,8 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8300000, guid: adc3f56299cb5314ab9c24148f395916, type: 3}
-  player: {fileID: 1354067287412988, guid: 7ff6c0f428aeb394b9895c0d9b4bcdb6, type: 2}
-  speed: 10
 --- !u!212 &212284254481937538
 SpriteRenderer:
   m_ObjectHideFlags: 1

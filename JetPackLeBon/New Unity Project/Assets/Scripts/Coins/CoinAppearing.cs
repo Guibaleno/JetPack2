@@ -33,11 +33,15 @@ public class CoinAppearing : MonoBehaviour
             speed = Donnees.VitessePiece + 10;
             PlayerPos = player.transform.position;
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);
+            if(NeedToMoveTowardY() && NeedToMoveTowardX())
+            {   
+                    transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);
+            }
+           
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
@@ -51,4 +55,12 @@ public class CoinAppearing : MonoBehaviour
         }
     }
 
+    private bool NeedToMoveTowardY()
+    {
+        return (transform.position.y - PlayerPos.y < 2 && PlayerPos.y < transform.position.y) || (PlayerPos.y - transform.position.y < 2 && PlayerPos.y > transform.position.y);
+    }
+    private bool NeedToMoveTowardX()
+    {
+        return (transform.position.x - PlayerPos.x < 2 && PlayerPos.x < transform.position.x) || (PlayerPos.x - transform.position.x < 2 && PlayerPos.x > transform.position.x);
+    }
 }
