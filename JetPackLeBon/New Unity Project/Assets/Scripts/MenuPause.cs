@@ -14,7 +14,7 @@ public class MenuPause : MonoBehaviour
         Donnees.PopUpStatistiques = false;
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         vie.gameObject.SetActive(true);
-
+        buttondouble.gameObject.SetActive(true);
     }
 
 
