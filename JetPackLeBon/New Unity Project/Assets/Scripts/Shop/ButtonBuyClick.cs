@@ -41,7 +41,16 @@ public class ButtonBuyClick : MonoBehaviour {
                 gameObject.GetComponentInChildren<Text>().text = "Buy (" + Donnees.invincible.ToString() + ")";
             }
         }
-
+        else
+        if (name == "AimantBouton")
+        {
+            if (Donnees.PointsAchat >= 30 && Donnees.AimantAchetee == false)
+            {
+                Donnees.PointsAchat -= 30;
+                Donnees.AimantAchetee = true;
+                gameObject.GetComponentInChildren<Text>().text = "Acheté";
+            }
+        }
     }
     void DeterminerSiAchat()
     {

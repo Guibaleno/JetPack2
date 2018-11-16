@@ -28,11 +28,13 @@ public class CoinAppearing : MonoBehaviour
     }
     void Update()
     {
-        speed = Donnees.VitessePiece + 10 ;
-        PlayerPos = player.transform.position;
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);
-
+        if (Donnees.AimantAchetee)
+        {
+            speed = Donnees.VitessePiece + 10;
+            PlayerPos = player.transform.position;
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, PlayerPos, step);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

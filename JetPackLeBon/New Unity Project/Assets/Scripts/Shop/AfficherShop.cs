@@ -9,6 +9,7 @@ public class AfficherShop : MonoBehaviour {
     [SerializeField] Text Prix2;
     public Button buttonBonhomme;
     public Button buttonEtoile;
+    public Button buttonAimant;
     int valeurArticle = 10;
   //  int ArgentTotale = int.Parse(Donnees.AfficherArgentTotale());
     void Start () {
@@ -21,6 +22,10 @@ public class AfficherShop : MonoBehaviour {
         if (Donnees.jetPackEtoileAchetee)
         {
             buttonEtoile.GetComponentInChildren<Text>().text = "Acheté";
+        }
+        if (Donnees.AimantAchetee)
+        {
+            buttonAimant.GetComponentInChildren<Text>().text = "Acheté";
         }
     }
 	

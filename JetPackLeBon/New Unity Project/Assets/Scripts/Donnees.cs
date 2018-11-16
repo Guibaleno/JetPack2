@@ -42,6 +42,7 @@ public class Donnees {
 
     public static int invincible { get; set; }
     public static bool invincibleBool { get; set; }
+    public static bool AimantAchetee { get; set; }
 
     public static bool PartieCommencee { get; set; }
     public static void CommencerPartie()
@@ -56,6 +57,7 @@ public class Donnees {
 
             tableauJetPacks[0] = true;
             PartieCommencee = true;
+        invincibleBool = false;
             invincible = 0;
         MonoBehaviour.print("nouvelle partie");
     }

@@ -145,6 +145,8 @@ public class CharacterAnimation : MonoBehaviour
             //{
             Donnees.invincible -= 1;
             Donnees.invincibleBool = true;
+            print("INVINCIBLE ACTIVEE");
+            DesactiverBoxColliderPieges();
             Invoke("MettreFinInvul", 5.0f);
             //}
         }
@@ -242,6 +244,22 @@ public class CharacterAnimation : MonoBehaviour
         {
             magicBootsEmission.rateOverTime = 0f;
            
+        }
+    }
+
+    void DesactiverBoxColliderPieges()
+    {
+        GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("Trap");
+        GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
+        for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
+        {
+            print(piegesJeu[cptPiege].ToString());
+            piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
+        }
+        for (int cptPiege = 0; cptPiege < piegesJeu2.Length; cptPiege++)
+        {
+            print(piegesJeu2[cptPiege].ToString());
+            piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 

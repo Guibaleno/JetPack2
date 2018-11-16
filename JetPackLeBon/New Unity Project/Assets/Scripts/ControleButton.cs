@@ -23,6 +23,13 @@ public class ControleButton : MonoBehaviour {
     {
         SceneManager.LoadScene("Missions");
     }
+
+    public void ArreterPartie()
+    {
+        Donnees.AimantAchetee = false;
+        Donnees.PartieCommencee = false;
+        MainMenu();
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -794,6 +794,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114971278305053550, guid: df72132e5c2406c45b6638f42706329a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ArreterPartie
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df72132e5c2406c45b6638f42706329a, type: 2}
   m_IsPrefabAsset: 0

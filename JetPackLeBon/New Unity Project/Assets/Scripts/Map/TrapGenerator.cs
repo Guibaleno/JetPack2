@@ -49,6 +49,10 @@ public class TrapGenerator : MonoBehaviour {
         //    float rotation = Random.Range(objectsMinRotation, objectsMaxRotation);
         //    obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
         //}
+        if (Donnees.invincibleBool)
+        {
+            obj.GetComponent<BoxCollider2D>().enabled = false;
+        }
         objects.Add(obj);
     }
 
