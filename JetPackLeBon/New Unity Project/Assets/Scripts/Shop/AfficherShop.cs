@@ -10,6 +10,7 @@ public class AfficherShop : MonoBehaviour {
     public Button buttonBonhomme;
     public Button buttonEtoile;
     public Button buttonAimant;
+    public Button buttonInvincible;
     int valeurArticle = 10;
   //  int ArgentTotale = int.Parse(Donnees.AfficherArgentTotale());
     void Start () {
@@ -27,6 +28,7 @@ public class AfficherShop : MonoBehaviour {
         {
             buttonAimant.GetComponentInChildren<Text>().text = "Acheté";
         }
+        buttonInvincible.GetComponentInChildren<Text>().text = "Buy (" + Donnees.invincible.ToString() + ")";
     }
 	
 
