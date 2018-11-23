@@ -15,6 +15,8 @@ public class MenuPause : MonoBehaviour
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Donnees.Chance = false;
         Donnees.DoublerPiece = false;
+        buttondouble.gameObject.SetActive(false);
+        vie.gameObject.SetActive(false);
     }
 
 

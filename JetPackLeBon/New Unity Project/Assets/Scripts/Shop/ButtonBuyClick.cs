@@ -56,15 +56,15 @@ public class ButtonBuyClick : MonoBehaviour {
     {
         if (jetPackBonhomme || gameObject.GetComponentInChildren<Text>().text != "Acheté")
         {
-            //if (Donnees.PointsAchat >= 10)
-            // {
+            if (Donnees.PointsAchat >= 10)
+             {
             if (gameObject.GetComponentInChildren<Text>().text != "Acheté")
             {
                 Donnees.PointsAchat -= 10;
             }
                 Donnees.ChangerJetPack(name.ToString());
                 gameObject.GetComponentInChildren<Text>().text = "Acheté";
-           // }
+            }
         }
     }
 }

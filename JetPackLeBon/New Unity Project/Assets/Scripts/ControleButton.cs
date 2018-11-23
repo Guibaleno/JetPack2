@@ -27,7 +27,7 @@ public class ControleButton : MonoBehaviour {
     public void ArreterPartie()
     {
         Donnees.AimantAchetee = false;
-        Donnees.PartieCommencee = false;
+        //Donnees.PartieCommencee = false;
         MainMenu();
     }
     public void MainMenu()

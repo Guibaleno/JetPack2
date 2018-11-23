@@ -82,7 +82,11 @@ public class CharacterAnimation : MonoBehaviour
             AdjustMagicBoots(magicBootsActive);
         }
        
-
+        if (gameOver.IsActive() && !playerAnimator.GetBool("isDead"))
+        {
+            gameOver.gameObject.SetActive(false);
+            Resume.gameObject.SetActive(true);
+        }
 
 
 }
@@ -143,14 +147,14 @@ public class CharacterAnimation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && Donnees.invincibleBool == false)
         {
-            //if (Donnees.invincible > 0)
-            //{
-            Donnees.invincible -= 1;
-            Donnees.invincibleBool = true;
-            
-            DesactiverBoxColliderPieges();
-            Invoke("MettreFinInvul", 5.0f);
-            //}
+            if (Donnees.invincible > 0)
+            {
+                Donnees.invincible -= 1;
+                Donnees.invincibleBool = true;
+                
+                DesactiverBoxColliderPieges();
+                Invoke("MettreFinInvul", 5.0f);
+            }
         }
     }
     private void Jump()
