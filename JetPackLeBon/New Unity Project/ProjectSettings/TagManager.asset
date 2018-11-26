@@ -16,6 +16,7 @@ TagManager:
   - AudioMission
   - particle
   - TrapCeiling
+  - TrapFloor
   layers:
   - Default
   - TransparentFX

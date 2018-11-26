@@ -190,7 +190,7 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void DeclencherMort(Collision2D collision)
     {
-        if ((collision.gameObject.tag.Equals("Trap") || collision.gameObject.tag.Equals("TrapCeiling")) && playerAnimator.GetBool("isDead") == false)
+        if ((collision.gameObject.tag.Equals("Trap") || collision.gameObject.tag.Equals("TrapCeiling") || collision.gameObject.tag.Equals("TrapFloor")) && playerAnimator.GetBool("isDead") == false)
         {
             playerAnimator.SetBool("isDead", true);
             HitByTrap(collision);
@@ -257,6 +257,7 @@ public class CharacterAnimation : MonoBehaviour
     {
         GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("Trap");
         GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
+        GameObject[] piegesJeu3 = GameObject.FindGameObjectsWithTag("TrapFloor");
         for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
         {
            
@@ -267,6 +268,12 @@ public class CharacterAnimation : MonoBehaviour
             
             piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
         }
+        for (int cptPiege = 0; cptPiege < piegesJeu3.Length; cptPiege++)
+        {
+
+            piegesJeu3[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
+        }
+
     }
 
     void MettreFinInvul()
@@ -274,6 +281,7 @@ public class CharacterAnimation : MonoBehaviour
         Donnees.invincibleBool = false;
         GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("Trap");
         GameObject[] piegesJeu2 = GameObject.FindGameObjectsWithTag("TrapCeiling");
+        GameObject[] piegesJeu3 = GameObject.FindGameObjectsWithTag("TrapFloor");
         for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
         {
            
@@ -283,6 +291,11 @@ public class CharacterAnimation : MonoBehaviour
         {
             
             piegesJeu2[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
+        }
+        for (int cptPiege = 0; cptPiege < piegesJeu3.Length; cptPiege++)
+        {
+
+            piegesJeu3[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

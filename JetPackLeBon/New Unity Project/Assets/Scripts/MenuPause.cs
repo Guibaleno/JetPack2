@@ -65,6 +65,8 @@ public class MenuPause : MonoBehaviour
             vie.gameObject.SetActive(false);
             playerAnimator.SetTrigger("isDeadOnetimeTrigger");
             Donnees.PartieTerminee = false;
+            DesactiverBoxColliderPieges();
+            Invoke("MettreFinInvul", 1.0f);
         }
     }
         public void JeuEnPause()
@@ -82,5 +84,29 @@ public class MenuPause : MonoBehaviour
     private bool PartieTerminee()
     {
         return Donnees.PartieTerminee;
+    }
+
+    void DesactiverBoxColliderPieges()
+    {
+ 
+        GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("TrapFloor");
+        for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
+        {
+
+            piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+    }
+
+    void MettreFinInvul()
+    {
+        Donnees.invincibleBool = false;
+        GameObject[] piegesJeu = GameObject.FindGameObjectsWithTag("TrapFloor");
+        for (int cptPiege = 0; cptPiege < piegesJeu.Length; cptPiege++)
+        {
+
+            piegesJeu[cptPiege].GetComponent<BoxCollider2D>().enabled = true;
+        }
+
     }
 }

@@ -14,8 +14,8 @@ public class TrapGenerator : MonoBehaviour {
     public float objectsMinDistance = 5.0f;
     public float objectsMaxDistance = 10.0f;
 
-    public float objectsMinY = -1.4f;
-    public float objectsMaxY = 1.4f;
+    public float objectsMinY = -3.4f;
+    public float objectsMaxY = 3.4f;
 
     public float objectsMinRotation = -45.0f;
     public float objectsMaxRotation = 45.0f;
@@ -44,11 +44,6 @@ public class TrapGenerator : MonoBehaviour {
         float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
-        //if (obj.tag != "Trap" && obj.tag != "TrapCeiling")
-        //{
-        //    float rotation = Random.Range(objectsMinRotation, objectsMaxRotation);
-        //    obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
-        //}
         if (Donnees.invincibleBool)
         {
             obj.GetComponent<BoxCollider2D>().enabled = false;
@@ -76,6 +71,10 @@ public class TrapGenerator : MonoBehaviour {
             if (obj.tag == "TrapCeiling")
             {
                 obj.transform.position = new Vector3(objX, 4.5f);
+            }
+            if (obj.tag == "TrapFloor")
+            {
+                obj.transform.position = new Vector3(objX, -3.59f);
             }
         }
         foreach (var obj in objectsToRemove)
