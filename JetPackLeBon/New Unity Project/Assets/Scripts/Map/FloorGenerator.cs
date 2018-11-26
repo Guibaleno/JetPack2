@@ -64,21 +64,13 @@ public class FloorGenerator : MonoBehaviour {
             }
             farthestRoomEndX = Mathf.Max(farthestRoomEndX, roomEndX);
         }
-        //for (int cptRooms = roomsToRemove.Count; cptRooms > 0; cptRooms --)
-        //{
-        //    currentRooms.Remove(roomsToRemove[cptRooms]);
-        //    Destroy(roomsToRemove[cptRooms]);
-        //}
+
         foreach (var room in roomsToRemove)
         {
             currentRooms.Remove(room);
-            //Destroy(room);
+            Destroy(room);
         }
-        for (int cptRooms = 0; cptRooms < roomsToRemove.Count; cptRooms ++)
-        {
-            Destroy(roomsToRemove[cptRooms]);
-            print(roomsToRemove.Count);
-        }
+
         if (addRooms)
         {
             AddRoom(farthestRoomEndX);

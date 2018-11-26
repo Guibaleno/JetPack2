@@ -27,20 +27,12 @@ public class ControleButton : MonoBehaviour {
     public void ArreterPartie()
     {
         Donnees.AimantAchetee = false;
-        //Donnees.PartieCommencee = false;
+        Donnees.DeterminerSiRageQuit();
         MainMenu();
     }
     public void MainMenu()
     {
+        
         SceneManager.LoadScene("MainMenu");
     }
-    // Use this for initialization
-    //void Start () {
-
-    //}
-
-    //// Update is called once per frame
-    //void Update () {
-
-    //}
 }

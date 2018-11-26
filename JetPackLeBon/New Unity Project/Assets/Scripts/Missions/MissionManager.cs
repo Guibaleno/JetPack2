@@ -26,7 +26,6 @@ public class MissionManager : MonoBehaviour {
         }
         else
         {
-            print("HELLO");
             Destroy(gameObject);
             AfficherMissions();
         }
@@ -60,32 +59,29 @@ public class MissionManager : MonoBehaviour {
 
     int ChoisirNombreAleatoire(int cptMission)
     {
-        System.Random randomNumber = new System.Random();
         int nombreGenere = 0;
         if (cptMission == 0)
         {
-            nombreGenere = randomNumber.Next(5, 10);
-            Donnees.MissionPointsUnePartie = nombreGenere;
-            
+            nombreGenere = UnityEngine.Random.Range(5, 10);
+            Donnees.MissionPointsUnePartie = nombreGenere;    
         }
         else
         if (cptMission == 1)
         {
-            nombreGenere = randomNumber.Next(20, 30);
-            Donnees.MissionDistanceUnePartie = nombreGenere;
-            
+            nombreGenere = UnityEngine.Random.Range(20, 30);
+            Donnees.MissionDistanceUnePartie = nombreGenere;           
         }
+        else
         if (cptMission == 2)
         {
-            nombreGenere = randomNumber.Next(15, 20);
+            nombreGenere = UnityEngine.Random.Range(15, 20);
             Donnees.MissionPointsTotaux = nombreGenere;
-
         }
+        else
         if (cptMission == 3)
         {
-            nombreGenere = randomNumber.Next(40, 50);
+            nombreGenere = UnityEngine.Random.Range(40, 50);
             Donnees.MissionDistanceTotale = nombreGenere;
-
         }
         return nombreGenere;
     }

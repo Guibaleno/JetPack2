@@ -10,7 +10,6 @@ public class ModifierTexture : MonoBehaviour {
     void Start () {
         Renderer rend = GameObject.FindGameObjectWithTag("particle").GetComponent<Renderer>();
         rend.material = new Material(shader);
-        print(Donnees.TrouverJetPackActuel() - 1);
         rend.material.mainTexture = texture[Donnees.TrouverJetPackActuel() - 1];
     }
 	

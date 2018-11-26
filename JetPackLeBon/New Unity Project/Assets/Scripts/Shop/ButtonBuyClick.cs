@@ -18,7 +18,6 @@ public class ButtonBuyClick : MonoBehaviour {
             }
 
             DeterminerSiAchat();
-            print("jetPackEtoile");
         }
         else
         if (name == "jetPackBonhomme")
@@ -29,7 +28,6 @@ public class ButtonBuyClick : MonoBehaviour {
 
             }
             DeterminerSiAchat();
-            print("jetPackBonhomme");
         }
         else
         if (name == "invincible")

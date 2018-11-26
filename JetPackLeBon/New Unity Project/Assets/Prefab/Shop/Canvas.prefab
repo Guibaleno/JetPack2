@@ -1200,6 +1200,7 @@ MonoBehaviour:
   buttonBonhomme: {fileID: 114261744902429918}
   buttonEtoile: {fileID: 114104260187780460}
   buttonAimant: {fileID: 114771041981802270}
+  buttonInvincible: {fileID: 114128327244603074}
 --- !u!114 &114771041981802270
 MonoBehaviour:
   m_ObjectHideFlags: 1

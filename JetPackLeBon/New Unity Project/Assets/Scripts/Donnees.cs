@@ -59,7 +59,6 @@ public class Donnees {
             PartieCommencee = true;
         invincibleBool = false;
             invincible = 0;
-        MonoBehaviour.print("nouvelle partie");
     }
 
     public static int TrouverJetPackActuel()
@@ -74,9 +73,6 @@ public class Donnees {
             }
             cptJetPack++;
         }
-        MonoBehaviour.print(tableauJetPacks.Count);
-        MonoBehaviour.print(tableauJetPacks[0]);
-        MonoBehaviour.print(tableauJetPacks[1]);
         return cptJetPack ;
     }
 
@@ -89,9 +85,6 @@ public class Donnees {
             jetPackEtoileAchetee = true;
             tableauJetPacks[1] = true;
             tableauJetPacks[0] = false;
-            
-            MonoBehaviour.print(tableauJetPacks[0]);
-            MonoBehaviour.print(tableauJetPacks[1]);
         }
         else
         {
@@ -101,7 +94,6 @@ public class Donnees {
             tableauJetPacks[0] = true;
             
         }
-        MonoBehaviour.print(jetPackName);
         for (int cptJetPack = 0; cptJetPack < tableauJetPacks.Count; cptJetPack++)
         {
             
@@ -202,7 +194,7 @@ public class Donnees {
     }
     public static string AfficherArgentTotale()
     {
-        return Math.Round(Convert.ToDecimal(PointsTotauxActuel)).ToString() ;
+        return Math.Round(Convert.ToDecimal(PointsTotauxActuel)).ToString();
     }
 
     public static string AfficherPointsObtenusDurantLaPartie()
@@ -236,5 +228,13 @@ public class Donnees {
     private static void JouerSon(AudioSource sonAJouer)
     {
         sonAJouer.Play();
+    }
+
+    public static void DeterminerSiRageQuit()
+    {
+        if (!PartieTerminee)
+        {
+            PointsAchat -= (PointsPartieActuelle + PointsObtenusMission);
+        }
     }
 }
