@@ -181,12 +181,10 @@ public class Donnees {
         if (PointsPartieActuelle > PointsMaximumNiveau)
         {
             PointsMaximumNiveau = PointsPartieActuelle;
-            MonoBehaviour.print(PointsMaximumNiveau);
         }
         if (DistancePartieActuelle > DistanceMaximaleNiveau)
         {
             DistanceMaximaleNiveau = DistancePartieActuelle;
-            MonoBehaviour.print(DistanceMaximaleNiveau);
         }
     }
 
