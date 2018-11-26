@@ -33,7 +33,6 @@ public class CharacterAnimation : MonoBehaviour
     void Start()
     {
         Donnees.PartieTerminee = false;
-        print("Player");
         Player = GetComponent<Rigidbody2D>();
         playerPosition = Player.position.x;
         playerCollider = GetComponent<BoxCollider2D>();

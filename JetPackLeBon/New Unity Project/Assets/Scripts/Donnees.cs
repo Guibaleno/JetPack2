@@ -127,6 +127,7 @@ public class Donnees {
             MissionPointsTotauxCompletee = true;
             ManageMissions(10);
             PointsTotauxActuel = 0;
+            MonoBehaviour.print("Mission Points Totaux complétée!");
         }
         return PointsTotauxActuel >= MissionPointsTotaux;
     }
@@ -146,7 +147,7 @@ public class Donnees {
         if (DistanceActuelle >= MissionDistanceUnePartie)
         {
             NombreMissionsReussieParPartie += 1;
-            
+            MonoBehaviour.print("Mission Distance une partie complétée");
             ManageMissions(5);
         }
         return DistanceActuelle >= MissionDistanceUnePartie;
@@ -159,7 +160,8 @@ public class Donnees {
             NombreMissionsReussieParPartie += 1;
             MissionDistanceTotaleCompletee = true;
             ManageMissions(10);
-            DistanceTotaleActuelle = 0;
+            
+            MonoBehaviour.print("Mission Distance totale  complétée");
         }
         return DistanceTotaleActuelle >= MissionDistanceTotale;
     }

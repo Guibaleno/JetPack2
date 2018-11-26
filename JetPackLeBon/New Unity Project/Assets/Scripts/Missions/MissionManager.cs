@@ -5,8 +5,7 @@ using System;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour {
-    Canvas canvas;
-    [SerializeField] GameObject missonPrefab;
+
     string[] LesMissionsTexte;
     int nombreMission;
     // Use this for initialization
@@ -14,20 +13,18 @@ public class MissionManager : MonoBehaviour {
     {
         nombreMission = 4;
         GameObject[] currentMissions = GameObject.FindGameObjectsWithTag("MissionManager");
-        canvas = FindObjectOfType<Canvas>();
+
         
         if (currentMissions.Length <= 1)
         {
             Donnees.LesMissions = new string[nombreMission];
             LesMissionsTexte = FabriquerTypesMissions();
             ChoisirValeursMissions(LesMissionsTexte);
-            AfficherMissions();
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
-            AfficherMissions();
         }
 
     }
@@ -62,40 +59,31 @@ public class MissionManager : MonoBehaviour {
         int nombreGenere = 0;
         if (cptMission == 0)
         {
-            nombreGenere = UnityEngine.Random.Range(5, 10);
+            nombreGenere = UnityEngine.Random.Range(15, 30);
             Donnees.MissionPointsUnePartie = nombreGenere;    
         }
         else
         if (cptMission == 1)
         {
-            nombreGenere = UnityEngine.Random.Range(20, 30);
+            nombreGenere = UnityEngine.Random.Range(75, 150);
             Donnees.MissionDistanceUnePartie = nombreGenere;           
         }
         else
         if (cptMission == 2)
         {
-            nombreGenere = UnityEngine.Random.Range(15, 20);
+            nombreGenere = UnityEngine.Random.Range(40, 50);
             Donnees.MissionPointsTotaux = nombreGenere;
         }
         else
         if (cptMission == 3)
         {
-            nombreGenere = UnityEngine.Random.Range(40, 50);
+            nombreGenere = UnityEngine.Random.Range(200, 300);
             Donnees.MissionDistanceTotale = nombreGenere;
         }
         return nombreGenere;
     }
 
-    void AfficherMissions()
-    {
-        for (int missionActuelle = 0; missionActuelle < Donnees.LesMissions.Length; missionActuelle++)
-        {
-            GameObject missionObject = Instantiate(missonPrefab, canvas.transform);
-            missionObject.GetComponent<Text>().text = Donnees.LesMissions[missionActuelle];
-            missionObject.transform.position = missionObject.transform.position + Vector3.up * missionActuelle * -20;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    
 
     public int NombrePiece()
     {

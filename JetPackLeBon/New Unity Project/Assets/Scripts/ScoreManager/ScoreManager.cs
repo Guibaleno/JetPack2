@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour {
         LabelScore = GetComponent<Text>();
         DontDestroyOnLoad(gameObject);
         Donnees.PointsObtenusMission = 0;
+        
     }
     private void Update()
     {

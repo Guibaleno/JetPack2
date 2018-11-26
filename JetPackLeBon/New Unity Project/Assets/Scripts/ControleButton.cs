@@ -5,10 +5,20 @@ using UnityEngine;
 public class ControleButton : MonoBehaviour {
 
     public void StartButton()
-    {
+    {       
         Donnees.DistancePartieActuelle = 0;
         Donnees.PointsPartieActuelle = 0;
         Donnees.NombreMissionsReussieParPartie = 0;
+        if (Donnees.MissionDistanceTotaleCompletee)
+        {
+            Donnees.DistanceTotaleActuelle = 0;
+            Donnees.MissionDistanceTotaleCompletee = false;
+        }
+        if (Donnees.MissionPointsTotauxCompletee)
+        {
+            Donnees.PointsTotauxActuel = 0;
+            Donnees.MissionPointsTotauxCompletee = false;
+        }
         SceneManager.LoadScene("Niveau");
     }
     public void ShopButton()
