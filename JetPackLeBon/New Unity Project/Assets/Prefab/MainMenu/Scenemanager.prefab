@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114836066758796464}
   - component: {fileID: 114028246193717722}
   - component: {fileID: 114864159869404878}
+  - component: {fileID: 114917501595818942}
   m_Layer: 0
   m_Name: Scenemanager
   m_TagString: Untagged
@@ -71,6 +72,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114864159869404878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069816564081326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285f8d048e21bf3418e0e6b9fdf10b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114917501595818942
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

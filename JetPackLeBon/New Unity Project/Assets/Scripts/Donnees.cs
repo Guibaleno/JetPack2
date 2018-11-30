@@ -235,6 +235,16 @@ public class Donnees {
         if (!PartieTerminee)
         {
             PointsAchat -= (PointsPartieActuelle + PointsObtenusMission);
+            DistanceTotaleActuelle -= DistancePartieActuelle;
+            PointsTotauxActuel -= PointsPartieActuelle;
+            if (MissionDistanceTotaleCompletee)
+            {
+                MissionDistanceTotaleCompletee = false;
+            }
+            if (MissionPointsTotauxCompletee)
+            {
+                MissionPointsTotauxCompletee = false;
+            }
         }
     }
 }

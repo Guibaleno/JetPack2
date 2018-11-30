@@ -280,11 +280,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114028246193717722, guid: 1106f610e5d6fc5448d1f72f730c8f00,
-        type: 2}
-      propertyPath: myClip.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4423378531995648, guid: 1106f610e5d6fc5448d1f72f730c8f00, type: 2}
       propertyPath: m_LocalPosition.x
       value: 730
@@ -327,35 +322,9 @@ Prefab:
       propertyPath: sonMenu
       value: 
       objectReference: {fileID: 1955400154}
-    - target: {fileID: 114028246193717722, guid: 1106f610e5d6fc5448d1f72f730c8f00,
-        type: 2}
-      propertyPath: myClip.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: cec6dcf6501f2754e9908fffce4abcda, type: 3}
-    - target: {fileID: 114028246193717722, guid: 1106f610e5d6fc5448d1f72f730c8f00,
-        type: 2}
-      propertyPath: myClip.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: efa61726a7b3f1f4c997227765900e2c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1106f610e5d6fc5448d1f72f730c8f00, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &404215623 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1069816564081326, guid: 1106f610e5d6fc5448d1f72f730c8f00,
-    type: 2}
-  m_PrefabInternal: {fileID: 404215622}
---- !u!114 &404215624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 404215623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285f8d048e21bf3418e0e6b9fdf10b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &575320778
 GameObject:
   m_ObjectHideFlags: 0
