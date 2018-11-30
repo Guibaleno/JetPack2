@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4423378531995648}
   - component: {fileID: 114836066758796464}
   - component: {fileID: 114028246193717722}
+  - component: {fileID: 114864159869404878}
   m_Layer: 0
   m_Name: Scenemanager
   m_TagString: Untagged
@@ -52,8 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a811f21d2899c479f3e9e156c929d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  son: {fileID: 82694590776017310, guid: 5704b9ecd61cf9f41b1f5c5d38dd2d18, type: 2}
+  son: {fileID: 0}
   hover: {fileID: 8300000, guid: 5ec6cb8cddcda0249b2d49926796e763, type: 3}
+  sonMenu: {fileID: 0}
+  myClip:
+  - {fileID: 8300000, guid: cec6dcf6501f2754e9908fffce4abcda, type: 3}
+  - {fileID: 8300000, guid: efa61726a7b3f1f4c997227765900e2c, type: 3}
 --- !u!114 &114836066758796464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,5 +68,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 738616f4dae51b54e874be43d971f469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114864159869404878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069816564081326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285f8d048e21bf3418e0e6b9fdf10b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
